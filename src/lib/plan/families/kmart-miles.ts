@@ -623,8 +623,8 @@ function tvUnit(s: ProductSpec): CustomParams {
     { title: "Screw the end panels on", detail: "Four screws through each end panel: two into the back of the partition, two into the end shelf.", fix: endScrews },
     { title: "Fix the shelves to the end panels", detail: "A small bracket under each end shelf, one screw into the shelf and one into the end panel.", fix: shelfBrackets },
     { title: "Screw the plinth to the bottom", detail: "Eight dowels in the plinth's top edges, press it onto the bottom and drive the ten screws up through it.", add: plinth, fix: plinthScrews, from: outFrom(plinth, [0, -300, 0]) },
-    { title: "Fit the hinges to the flat doors", detail: "Two straight hinges (M) on each flat door (11 and 12), two screws each. Mind which edge: the doors open away from the middle.", fix: flatHinges, wait: ["D11", "D12"], from: outFrom(["D11", "D12"]) },
-    { title: "Fit the hinges to the curved doors", detail: "Two cranked hinges (L) inside the back edge of each curved door (10 and 13), two screws each.", fix: curvedHinges, wait: ["D10", "D13"], from: outFrom(["D10", "D13"]) },
+    { title: "Fit the hinges to the flat doors", detail: "Two straight hinges (M) on each flat door (11 and 12), two screws each. Mind which edge: the doors open away from the middle.", fix: flatHinges, wait: ["D11", "D12"], from: outFrom(["D11", "D12"], [0, 0, -OUT]) },
+    { title: "Fit the hinges to the curved doors", detail: "Two cranked hinges (L) inside the back edge of each curved door (10 and 13), two screws each.", fix: curvedHinges, wait: ["D10", "D13"], from: outFrom(["D10", "D13"], [0, 0, -OUT]) },
     {
       title: "Stand it up, slide in the upper back and hang the doors",
       detail: "Stand it the right way up and slide the upper back (8) down onto the middle shelf. Screw each hinge's plate on with four screws, the flat doors to the partitions and the curved doors to the end panels.",
