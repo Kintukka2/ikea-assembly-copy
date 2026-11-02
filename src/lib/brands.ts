@@ -121,3 +121,9 @@ export function disclaimer(b?: BrandId) {
   const owners = list.map((x) => x.owner).join(" or ");
   return `Dowel is an independent, unofficial project. It is not affiliated with, sponsored or endorsed by ${owners}, or by any ${names} company. ${list.map((x) => x.name).join(" and ")} product names are trademarks of their owners.`;
 }
+
+/** What a product's family is called in copy: IKEA's is its name (KALLAX); Kmart's is the range ("Charlie"). */
+export function familyName(s: { brand?: string; name: string; line?: string }) {
+  if (brandOf(s) === "ikea" || !s.line) return s.name;
+  return s.line.replace(/\b\w/g, (c) => c.toUpperCase());
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { BRANDS, brandOf } from "@/lib/brands";
+import { BRANDS, brandOf, familyName } from "@/lib/brands";
 import { numbersFor } from "@/lib/catalog";
 import Link from "next/link";
 import { spellOut } from "@/lib/shorthand";
@@ -154,7 +154,7 @@ export default function CoverPanel({
 
         {s.siblings && s.siblings.length > 0 && (
           <>
-            <h3 className="section-title">Other {s.name} products</h3>
+            <h3 className="section-title">Other {familyName(s)} products</h3>
             <div className="chips">
               {s.siblings.slice(0, 6).map((v) => (
                 <Link key={v.slug} href={`/build/${v.slug}`} className="chip ghost">

@@ -1,5 +1,6 @@
 "use client";
 
+import { familyName } from "@/lib/brands";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -178,7 +179,7 @@ function NextUp({ plan }: { plan: Plan }) {
   if (!picks.length) return null;
   return (
     <>
-      <h3 className="section-title">{s.siblings?.length ? `Finish the ${s.name} set` : "Up next"}</h3>
+      <h3 className="section-title">{s.siblings?.length ? `Finish the ${familyName(s)} set` : "Up next"}</h3>
       <div className="next-up">
         {picks.map((p) => (
           <Link key={p.slug} href={`/build/${p.slug}`} className="next-card">
