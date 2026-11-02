@@ -22,13 +22,13 @@
 | 23 Oct | Hassan replies in the thread that the full release will come the following week (reported). Search snippets also show a Youssef post saying it was "Designed & built by @nutlope and I" (snippet only; I could not open the status). | [creatorstoolbox.com/tools/bygga](https://creatorstoolbox.com/tools/bygga) |
 | 24 Oct | First press, written from the teaser alone: ITHardware.pl, Marcin Manowski, "Papierowa instrukcja to przeżytek" ("the paper manual is obsolete"). | [ithardware.pl](https://ithardware.pl/aktualnosci/ikea_bygga_instrukcje_montaz_3d-55395.html) |
 | 26 Oct | 108 commits in one day: full catalog merge, share cards, voice batches, footer credit "Built by Hassan and Youssef". | repo history |
-| 27 Oct | 49 commits, including "the site lives at usebygga.com". Hassan's only 3 commits land in a ten-minute window (16:54–17:04 EDT): Plausible analytics, the repo move to `Nutlope/bygga`, and Together links routed through `togetherai.link` "to count clicks". | repo history |
+| 27 Oct | 49 commits, including "the site lives at usebygga.com". Hassan's only 3 commits land in a ten-minute window (16:54 to 17:04 EDT): Plausible analytics, the repo move to `Nutlope/bygga`, and Together links routed through `togetherai.link` "to count clicks". | repo history |
 | **27 Oct, 19:11:48 UTC** | **Launch tweet by @nutlope:** "Introducing Bygga! It walks you through assembling IKEA furniture step by step, with interactive 3D & voice instructions. 100% free & open source.", with a 31-second video. **279,339 views, 3,497 likes, 200 reposts, 154 replies, 57 quotes, 3,041 bookmarks.** | [x.com/nutlope/status/2115159545307619695](https://x.com/nutlope/status/2115159545307619695) |
 | 27 Oct | Self-reply: "Try Bygga yourself! Includes every buildable IKEA product." plus the link. 17,245 views, 174 likes. | [x.com/nutlope/status/2115159547614744646](https://x.com/nutlope/status/2115159547614744646) |
 | 27 Oct | @YoussefUiUx replies in the launch thread, "This one's fun! 🚀". This is from search snippets; I have no status URL. | search result on the launch thread |
 | 27 Oct, 21:53 UTC | Hacker News submission "Build IKEA Step by Step" by **plurby** (not the authors): **3 points, 0 comments**. It was not a Show HN and never reached the front page. | [news.ycombinator.com/item?id=50266369](https://news.ycombinator.com/item?id=50266369) |
-| 28 Oct | Caschys Blog (DE), GeekLife.cz (CZ), FastToolHub. GitHub issues #1–#3 opened. | see Press below |
-| 28–29 Oct | Post-launch accuracy commits (see Reception). | repo history |
+| 28 Oct | Caschys Blog (DE), GeekLife.cz (CZ), FastToolHub. GitHub issues #1 to #3 opened. | see Press below |
+| 28 to 29 Oct | Post-launch accuracy commits (see Reception). | repo history |
 | 29 Oct | Web Reactiva (ES). | [webreactiva.com](https://www.webreactiva.com/blog/bygga-ikea) |
 | 30 Oct | The Menon Lab (EN), LangweileDich.net (DE), tchgdns.de (DE). Issue #5, the "Hackea" derivative. | see below |
 | 2 Nov | wihel.de (DE). | [wihel.de](https://www.wihel.de/bygga-ikea-aufbau-anleitung-als-3d-show/) |
@@ -172,7 +172,7 @@ Directory and aggregator pages: [FastToolHub](https://fasttoolhub.com/en/terms/b
 | Cadasio | 2021 post | Commercial CAD-to-3D instruction tool, with a MICKE demo ([cadasio.com](https://www.cadasio.com/post/what-if-ikea-instructions-were-3d)) | B2B and paid; needs CAD |
 | Hackathon BRIMNES/LACK demo | Aug 2026 | Agents rebuilt parts from IKEA PDFs with three.js primitives in 3 hours ([x.com/neil_xbt](https://x.com/neil_xbt/status/2084944250446512491)) | 2 products |
 | IKEA Complexity Index (ikea.greg.technology) | Aug 2026 | Ranks 21,290 products by assembly difficulty ([Gizmodo](https://gizmodo.com/this-website-ranks-ikea-products-by-how-difficult-they-are-to-assemble-2000801569)) | Difficulty rankings, not guides |
-| **Flat Pack, Step by Step (Ryan Sael, sael.net/flatpack)** | **19–21 Oct 2026**, days before Bygga's teaser | Interactive 3D IKEA manuals, BILLY first, then about 26 products. It reproduces IKEA manuals "unaltered" side by side, and dimensions are "eyeballed from the drawings" ([sael.net](https://sael.net/flatpack/), [Gigazine](https://gigazine.net/gsc_news/en/20261022-flat-pack-step-by/), [Gizmodo Japan, 29 Oct](https://www.gizmodo.jp/article/2610-ikea-furniture-assembly-guide/)) | The closest rival: hand-built, few products, no voice |
+| **Flat Pack, Step by Step (Ryan Sael, sael.net/flatpack)** | **19 to 21 Oct 2026**, days before Bygga's teaser | Interactive 3D IKEA manuals, BILLY first, then about 26 products. It reproduces IKEA manuals "unaltered" side by side, and dimensions are "eyeballed from the drawings" ([sael.net](https://sael.net/flatpack/), [Gigazine](https://gigazine.net/gsc_news/en/20261022-flat-pack-step-by/), [Gizmodo Japan, 29 Oct](https://www.gizmodo.jp/article/2610-ikea-furniture-assembly-guide/)) | The closest rival: hand-built, few products, no voice |
 | ikea-lab-web (Poznań University of Economics, research) | 2026 | Browser player for 3D IKEA guides ([GitHub](https://github.com/Hybrisen777/ikea-lab-web)) | Research demo |
 | TaskRabbit, Airtasker and similar | ongoing | Paid human assembly | A different job: someone else builds it |
 
@@ -188,7 +188,7 @@ The GitHub API was blocked, so these come from [github.com/Nutlope/bygga](https:
 
 **Commits (repository):**
 - 163 by Youssef and 3 by Hassan El Mghari.
-- Dates run 20–29 Oct. Commits per day: 20 Oct 1, 21 Oct 3, 22 Oct 1, 23 Oct 1, **26 Oct 108**, **27 Oct 49**, 28 Oct 1, 29 Oct 2.
+- Dates run 20 to 29 Oct. Commits per day: 20 Oct 1, 21 Oct 3, 22 Oct 1, 23 Oct 1, **26 Oct 108**, **27 Oct 49**, 28 Oct 1, 29 Oct 2.
 
 **Product counts differ by source:**
 - README: 1,171 products and 2,180 sizes.
