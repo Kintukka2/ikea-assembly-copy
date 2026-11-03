@@ -1,0 +1,22 @@
+Dowel is an independent, unofficial project. It is not affiliated with,
+sponsored or endorsed by Inter IKEA Systems B.V., Kmart Australia Limited, or
+any IKEA or Kmart company.
+
+Dowel is built on Bygga (https://github.com/Nutlope/bygga), MIT licensed,
+copyright (c) 2026 Bygga contributors. Its engine, plan generator, IKEA
+catalog, voice clips and interface come from Bygga; LICENSE keeps its notice.
+
+The MIT license in LICENSE covers the project's own code, drawings and voice
+clips. It grants no rights in anyone else's trademarks: IKEA, the IKEA logo and
+IKEA product names (KALLAX, BILLY, MALM and the rest) are trademarks of Inter
+IKEA Systems B.V.; Kmart and Kmart product names are trademarks of Kmart
+Australia Limited. They are used here only to say which product a guide is for.
+
+Neither shop's product listings nor manuals are part of this repository.
+scripts/ikea/fetch.ts downloads IKEA's listings for local use, and only the
+catalog rows derived from them (names, product types and sizes in src/data)
+ship with the app. Kmart's rows in src/data/kmart.ts are names, keycodes and
+sizes as Kmart publishes them; its manuals are read, never copied.
+
+Assembly guides are generated drawings, not IKEA's or Kmart's instructions.
+Always check them against the official manual that comes with the product.
