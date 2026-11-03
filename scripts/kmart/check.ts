@@ -5,8 +5,9 @@
  *   npm run kmart:check -- --only <slug> one product, in full (each step's parts and fittings)
  *   npm run kmart:check -- --quiet       problems only
  *
- * Fails when a Kmart product doesn't build, has no steps, puts a part outside the product, has a keycode that
- * doesn't open it, or when the search checks below stop finding what they should.
+ * Fails when a Kmart product doesn't build, has no steps, isn't built by a recipe read from its own manual (a kind
+ * builder makes its parts and fittings up), puts a part outside the product, has a keycode that doesn't open it, or
+ * when the search checks below stop finding what they should.
  */
 import { KEYCODES, PRODUCTS, toSpec } from "@/lib/catalog";
 import { buildPlan } from "@/lib/plan";
@@ -65,6 +66,7 @@ for (const e of KM) {
   const family = familyOf(spec);
   const fromRecipe = plan.steps.length > 0 && fromManual(spec);
   if (fromRecipe) recipes++;
+  else fail(`${e.slug}: not built from its manual (no recipe in src/lib/plan/families/kmart-*.ts answers for it)`);
   if (quiet) continue;
   const panels = plan.parts.filter((p) => !p.extra).reduce((a, p) => a + p.qty, 0);
   const fittings = plan.hardware.filter((h) => !h.notIncluded).reduce((a, h) => a + h.qty, 0);

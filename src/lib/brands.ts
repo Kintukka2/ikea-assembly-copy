@@ -58,7 +58,7 @@ export const BRANDS: Record<BrandId, Brand> = {
     // Kmart's search takes a keycode as well as a name, and the product page links its assembly instructions
     manualUrl: (name, number) => `https://www.kmart.com.au/search/?searchTerm=${encodeURIComponent(number ?? name)}`,
     caps: false,
-    examples: ["8 Cube Storage Unit", "Charlie 6 Drawer Chest", "42633297", "Ladder Shelf", "Kids table"],
+    examples: ["8 Cube Storage Unit", "Charlie 6 Drawer Chest", "42633297", "Ladder Shelf", "Kids Bookcase"],
   },
 };
 
