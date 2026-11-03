@@ -29,7 +29,22 @@ const SECURITY = [
   { key: "Permissions-Policy", value: "camera=(self), microphone=(self), geolocation=(), payment=(), usb=()" },
 ];
 
+/**
+ * The site's own address, for share cards, canonical links and the sitemap: set NEXT_PUBLIC_SITE_URL, or let the host
+ * say it (Netlify's URL, Vercel's production domain). Worked out at build time, so every page and image agrees.
+ */
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "") ||
+  "http://localhost:3000";
+
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_SITE_URL: SITE_URL,
+    // Vercel's own analytics only where Vercel serves it (/_vercel/insights is not there on other hosts)
+    NEXT_PUBLIC_VERCEL_ANALYTICS: process.env.VERCEL ? "1" : "",
+  },
   // AGENTS.md is ours (it keeps the same advice, without the dashes the managed block brings)
   agentRules: false,
   cacheComponents: true,

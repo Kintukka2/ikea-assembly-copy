@@ -47,7 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${noto.variable} ${display.variable}`}>
       <body>
         <MotionPrefs>{children}</MotionPrefs>
-        <Analytics />
+        {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === "1" && <Analytics />}
         {/* it reads the path, which the prerendered shell doesn't know yet */}
         <Suspense fallback={null}>
           <Offline />
