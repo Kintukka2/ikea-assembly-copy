@@ -51,12 +51,20 @@ function list(items: string[]) {
   return items.slice(0, -1).join(", ") + " and " + items[items.length - 1];
 }
 
+/** More than one of a fitting: "four levelling feet", "four pivot bushes", "two castors with brakes". */
+function plural(name: string) {
+  const one = (w: string) => (/foot$/.test(w) ? w.slice(0, -4) + "feet" : /(s|sh|ch|x|z)$/.test(w) ? w + "es" : w + "s");
+  const m = name.match(/^(.*?) with (.*)$/);
+  return m ? `${one(m[1])} with ${one(m[2])}` : one(name);
+}
+
 function count(n: number, kind: HwKind, name: string) {
-  const lower = name.toLowerCase().replace(/\ballen\b/, "Allen");
+  // "Drawer runner, left" is a left drawer runner: a comma inside a list of counts reads as two things
+  const lower = name.toLowerCase().replace(/\ballen\b/, "Allen").replace(/^(.+), (left|right)$/, "$2 $1");
   // nobody counts out thirty-four nails
   if (kind === "nail") return "the nails";
   if (n === 1) return (/^[aeiou]/i.test(lower) ? "an " : "a ") + lower;
-  return `${numWords(n)} ${lower}s`;
+  return `${numWords(n)} ${plural(lower)}`;
 }
 
 const HW_ORDER: HwKind[] = ["dowel", "camScrew", "cam", "legScrew", "bolt", "pin", "plate", "bracket", "runner", "hinge", "knob", "handle", "screw", "nail", "glide", "plug", "stud", "clamp", "angle", "nut", "washer", "clip", "strap", "foot", "cap", "spacer"];

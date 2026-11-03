@@ -10822,14 +10822,6 @@
   "takes": 1,
   "local": true
  },
- "148h8snpu1s": {
-  "text": "You'll need four cam bolts, two cabinet runner, lefts, two cabinet runner, rights and sixteen runner screws.",
-  "ms": 6374,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
  "148sri2kl6h": {
   "text": "Make a pencil mark on the back edge of each side, in the middle of the fixed shelf.",
   "ms": 4180,
@@ -12086,14 +12078,6 @@
   "takes": 1,
   "local": true
  },
- "1ionqv0ems6": {
-  "text": "You'll need two flip fitting, lefts, two flip fitting, rights and twelve screws.",
-  "ms": 4127,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
  "1ip5kvscbsh": {
   "text": "The runners face up. Push each rail down onto its dowel and cam bolt.",
   "ms": 4153,
@@ -12225,14 +12209,6 @@
  "1kb4hjnl2jd": {
   "text": "Put the plinth together.",
   "ms": 1123,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
- "1kgmmglk91h": {
-  "text": "You'll need two drawer runner, lefts, two drawer runner, rights and twelve runner screws.",
-  "ms": 4467,
   "heard": null,
   "ok": true,
   "takes": 1,
@@ -12473,14 +12449,6 @@
  "1nd4969uk84": {
   "text": "Turn it upright where it will go, against the wall.",
   "ms": 2534,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
- "1nkg32e8i4i": {
-  "text": "You'll need three drawer runner, lefts, three drawer runner, rights and eighteen runner screws.",
-  "ms": 4859,
   "heard": null,
   "ok": true,
   "takes": 1,
@@ -13414,14 +13382,6 @@
   "takes": 1,
   "local": true
  },
- "1zk8nsghauz": {
-  "text": "You'll need two castors and two castor with brakes.",
-  "ms": 2717,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
  "1zkl5o9giha": {
   "text": "Push dowels into the shelf.",
   "ms": 1489,
@@ -13897,14 +13857,6 @@
  "24yo8rdw4ae": {
   "text": "You're on step six of thirty-three.",
   "ms": 1672,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
- "250k9ob51ds": {
-  "text": "You'll need twenty-two cam bolts, eight screws, four stop blocks and four pivot bushs.",
-  "ms": 4989,
   "heard": null,
   "ok": true,
   "takes": 1,
@@ -16038,14 +15990,6 @@
   "takes": 1,
   "local": true
  },
- "cxqikuqb3m": {
-  "text": "You'll need ten cam bolts, three cabinet runner, lefts, three cabinet runner, rights and twenty-four runner screws.",
-  "ms": 6661,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
  "d02hrrpvws": {
   "text": "Screw the cam bolts into end panel 1.",
   "ms": 2273,
@@ -16278,14 +16222,6 @@
   "takes": 1,
   "local": true
  },
- "fvig6dlvpg": {
-  "text": "You'll need four Allen bolts and four levelling foots.",
-  "ms": 2769,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
  "fw03gh9wj7": {
   "text": "Push the small dowels into one face of each board, turn it over and press it onto the panel, between the posts.",
   "ms": 6034,
@@ -16361,14 +16297,6 @@
  "gr86f9kwst": {
   "text": "Two screws from the back of each door, on the edge away from the hinges.",
   "ms": 3840,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
- "grhqawjr9u": {
-  "text": "You'll need three cabinet runner, rights, three cabinet runner, lefts and twenty-four runner screws.",
-  "ms": 5460,
   "heard": null,
   "ok": true,
   "takes": 1,
@@ -17950,14 +17878,6 @@
   "takes": 1,
   "local": true
  },
- "z1lrbi54uw": {
-  "text": "You'll need four levelling foots.",
-  "ms": 1646,
-  "heard": null,
-  "ok": true,
-  "takes": 1,
-  "local": true
- },
  "z4juxsnx0p": {
   "text": "It sits on the drawer bottom. Ring nails through each side into it: three each side on the deep drawer, two on the others.",
   "ms": 6870,
@@ -18097,6 +18017,1262 @@
  "zwwb4c6vhi": {
   "text": "Bolt on the bottom.",
   "ms": 1149,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "10v47fpuam4": {
+  "text": "Screw a plate across each joint.",
+  "ms": 1750,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "10zbqxwfjjp": {
+  "text": "Rest each drawer on its pair of rails and push it all the way in.",
+  "ms": 3500,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "134hm1g24a8": {
+  "text": "Screw on the other end frame.",
+  "ms": 1411,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1353e852sps": {
+  "text": "Join the frames along the bottom.",
+  "ms": 1776,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "13gtup3ysij": {
+  "text": "Bolt on the front panels.",
+  "ms": 1411,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "13tapmkyg8p": {
+  "text": "Turn it round for the other two.",
+  "ms": 1411,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1411c9pwgf7": {
+  "text": "Cover the bolt heads.",
+  "ms": 1176,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "142eziiben6": {
+  "text": "Push a joiner (H) into the top of each post of the bottom half (B) and press the top half (A) down over them. A short bolt (a) goes through the post either side of each joint. Leave every bolt loose for now.",
+  "ms": 12904,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "16pekybsys3": {
+  "text": "And that's it. Your Nate Coffee Table is built. Well done.",
+  "ms": 3239,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "16qrhg0hxrz": {
+  "text": "Fold out the two big drawers.",
+  "ms": 1620,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "17kyfx1nswv": {
+  "text": "Screw in the castors and tighten up.",
+  "ms": 1776,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "17lhf7qc6kt": {
+  "text": "Hook four rails onto the left frame.",
+  "ms": 1829,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "17v4vo1cdnp": {
+  "text": "Fold out the three small drawers.",
+  "ms": 1776,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "18cvaxgif63": {
+  "text": "Bolt on the other two quarters.",
+  "ms": 1776,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "18r00f2pkki": {
+  "text": "Rails (f) this time, on the inside of the frame, one at each level.",
+  "ms": 3866,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "19229p63z3x": {
+  "text": "Thread four tubes through the mesh.",
+  "ms": 1593,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "19f7xt5gte": {
+  "text": "You're on step two of two.",
+  "ms": 1332,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1austdq51v0": {
+  "text": "Rails (e) go on the inside of the frame, one at each level, the ledge facing in. Push the hook at each end into the slot in the post.",
+  "ms": 8150,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1bwco8pjx9e": {
+  "text": "Screw in the first two brackets.",
+  "ms": 1567,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1c3ichtc9kv": {
+  "text": "You'll need two straight plates, two curved plates and sixteen short bolts.",
+  "ms": 3736,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1c7tz8jexa6": {
+  "text": "Turn it upright onto its felt pads. Each board takes up to 5 kg.",
+  "ms": 4467,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1cbwftbjqux": {
+  "text": "You'll need twelve paper covers and six felt pads.",
+  "ms": 2691,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1cr6ymuv3x0": {
+  "text": "You'll need three right cabinet runners, three left cabinet runners and twenty-four runner screws.",
+  "ms": 5198,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1cuc722a": {
+  "text": "Lay the top (H) on the frames and turn two bolts (a) up through the top of each end frame and divider frame into it.",
+  "ms": 7001,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1d5izrbiolf": {
+  "text": "And that's it. Your Ally Side Table is built. Well done.",
+  "ms": 3265,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1dttyyfymmy": {
+  "text": "Push one tube (3) in along the back bottom and one along the middle bottom, inside the fold of the mesh so the cloth goes round it. Screw each one to the end frame with a screw (A).",
+  "ms": 11050,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1e1okza9v5y": {
+  "text": "You'll need four bolts and four washers.",
+  "ms": 2011,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1e9ymokjgcq": {
+  "text": "Set a bracket (P) in the corner where a wing meets the top, and drive one screw (E) into the top and one into the wing. Do the same on the opposite wing.",
+  "ms": 8986,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1eumzi6wymf": {
+  "text": "Join the ends with the floor bar and plates.",
+  "ms": 2299,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1gax9grodlh": {
+  "text": "Slide in the drawers.",
+  "ms": 1176,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1gtaesgttb6": {
+  "text": "You'll need eight bolts.",
+  "ms": 1228,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1gzo65gxs5e": {
+  "text": "Loop a strap (h) round the top of each end frame's back post. Stand the chest against the wall, mark, drill and push in the plugs, then screw each strap to the wall through a washer (g). Check the wall for pipes and cables first.",
+  "ms": 13584,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1h7eakmc67v": {
+  "text": "You'll need four right-hand drawer rails and four left-hand drawer rails.",
+  "ms": 3866,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1h9t31uky9z": {
+  "text": "Slot the boards together and set them on the top.",
+  "ms": 2586,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1ho577uny4x": {
+  "text": "Push four legs into the frame.",
+  "ms": 1567,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1hrwy1wh521": {
+  "text": "You'll need six long bolts and four adjustable feet.",
+  "ms": 2900,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1hzixdba0tx": {
+  "text": "Turn the cam bolts into the top.",
+  "ms": 1829,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1i3vbirmjv4": {
+  "text": "Stand it on its base. The top takes up to 10 kg.",
+  "ms": 3318,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1ijc6ju6chb": {
+  "text": "Press on the second frame and four more legs.",
+  "ms": 2508,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1ind3nj9w7d": {
+  "text": "Lay the two back end panels (2 and 4) on a rug, ledges up. Stand the top (1) and the shelf (7) in them on their edges marked BACK, each end on its ledge, and turn three bolts (A) through each ledge into the board with the hex key (B): twelve in all. Leave them loose.",
+  "ms": 15882,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1ixy916ouo2": {
+  "text": "Stand the divider frames on the middle rails.",
+  "ms": 2325,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1iy7p6821ek": {
+  "text": "On the wide rings, now on top, lay a plate (A) across each of the four joints and drive two screws (B) into each side of it with a screwdriver. Then tighten all eight bolts.",
+  "ms": 10762,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1m67k2lui6k": {
+  "text": "Each bay takes a pair of rails, the ledges facing in: the rail (e) on its left wall, the rail (d) on its right. Push the hooks at each end into the slots in the posts. Three bays on top, two below: five of each.",
+  "ms": 13140,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1mfwqc1wzx8": {
+  "text": "You'll need nine bolts.",
+  "ms": 1280,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1mxvgu9o5r": {
+  "text": "Peel the backing off the four EVA pads (D) and press one onto the middle of each wide ring.",
+  "ms": 5616,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1myume1gejp": {
+  "text": "Stand it on its pads. The top takes up to 5 kg.",
+  "ms": 3318,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1n0u5m3y5fr": {
+  "text": "Stand it up and fit the wall brackets.",
+  "ms": 1881,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1nocexan15z": {
+  "text": "Turn the table round and fit the last two brackets on the other board's wings the same way.",
+  "ms": 5068,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1o6uqxtlt4f": {
+  "text": "Screw on the first end frame.",
+  "ms": 1463,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1o9mdaxmadf": {
+  "text": "You'll need ten cam bolts, three left cabinet runners, three right cabinet runners and twenty-four runner screws.",
+  "ms": 6322,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1oays9ocbyr": {
+  "text": "Fit the left end frame (A) and the right one (B) over the ends of the four long rails, with a bolt (a) through the frame into each rail.",
+  "ms": 7837,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1q59qm3idck": {
+  "text": "Close the ring with the last two quarters, two bolts and washers in each, still loose.",
+  "ms": 4598,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1qupum75shm": {
+  "text": "You'll need four joining plates and sixteen screws.",
+  "ms": 2534,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1qv88gttn3e": {
+  "text": "Turn it over. Screw a wall bracket (D) under the back of the top near each leg with a screw (C), its tab hanging down at the back edge.",
+  "ms": 8098,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1r62mgoj5u6": {
+  "text": "Add the third frame and its legs.",
+  "ms": 1750,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1rc1z7jphnd": {
+  "text": "Lay the next frame on the legs and press it down over their tops at all four corners, then push four legs into it, notched ends up.",
+  "ms": 7314,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1s1gmpj2aux": {
+  "text": "And that's it. Your Round Marble Look Side Table is built. Well done.",
+  "ms": 3971,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1tmoe2n2hpo": {
+  "text": "You'll need twelve bolts.",
+  "ms": 1358,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1ttei0qqzp0": {
+  "text": "Hold an end frame (1) against the ends of the four tubes and drive a screw (A) through it into each one. Leave them loose for now.",
+  "ms": 7628,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1tucncedqa": {
+  "text": "You'll need four long bolts.",
+  "ms": 1463,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1tv5xyidsoh": {
+  "text": "You'll need four Allen bolts and four levelling feet.",
+  "ms": 2691,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1ut5bhyfuuj": {
+  "text": "Tighten every bolt. Stick three felt pads (G) under each end and press a paper cover (H) over each of the 24 bolt heads under the top and shelf. Screw the wall bracket (J) under the middle of the top's back edge with the small screw (I).",
+  "ms": 15125,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1wcn23zxury": {
+  "text": "Hold a post (8) up the back beside each end and drive two screws (F) through each of its three pairs of tabs: into the floor bar, the shelf and the top. Twelve in all.",
+  "ms": 9953,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1y2q2sh2h32": {
+  "text": "Lay the mesh cloth (2) out and slide a tube (3) through each of its four sleeves: the back top edge, the middle top, the front top and the front bottom.",
+  "ms": 8594,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1ykwvihe38y": {
+  "text": "Open a fabric drawer (F) out into a box and lay a base board (G) flat in its bottom. Do the same for all eight.",
+  "ms": 7105,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1yoal41pnkf": {
+  "text": "The small ones go in the top three bays, the big ones below. Rest each drawer on its pair of rails and push it all the way in.",
+  "ms": 7523,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1yxv96x78va": {
+  "text": "You'll need two left flip fittings, two right flip fittings and twelve screws.",
+  "ms": 3866,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "1z4s80d5f0t": {
+  "text": "Open a small fabric drawer (I) out into a box and lay a small base board (J) flat in its bottom. Do the same for all three.",
+  "ms": 8020,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "20ccv8tra6r": {
+  "text": "Stand it against the wall, mark through the two tabs, drill, push in the wall plugs (F) and drive the wall screws (E) through the tabs into them. Check the wall for pipes and cables first. The top takes up to 15 kg.",
+  "ms": 13322,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "20ir7met7z3": {
+  "text": "Join the two halves of the left frame.",
+  "ms": 1829,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "20lrcplwtf6": {
+  "text": "Bolt on the end frames.",
+  "ms": 1437,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "20o6gijg5aa": {
+  "text": "Four rails (f) on the side that faces the left frame and four (e) on the side facing the right one, at the same four heights as on the end frames.",
+  "ms": 9195,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "21j6dhk1ksg": {
+  "text": "Hook rails onto both sides of the middle frame.",
+  "ms": 2508,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "227bbvf6bky": {
+  "text": "Stand it upside down on its top. Lay the floor bar (6) between the back ends of the floor ledges, its holes to the back, and bolt a straight plate (E) over each joint with four short bolts (C). Bolt a curved plate (D) round each end, across its two panels, with four more.",
+  "ms": 16483,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "23aq2rzq3gn": {
+  "text": "And that's it. Your Nate Bedside Table is built. Well done.",
+  "ms": 3448,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "23q625kpmmv": {
+  "text": "Lay the top (1) face down on a rug and screw the four cam bolts (B) into the holes near its edge with a screwdriver.",
+  "ms": 6896,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "23v0wj5wybq": {
+  "text": "Lay the second slatted side (2) over the other edge of the boards, a ledge beside each board, and turn three bolts through each ledge the same way. Now tighten all eighteen bolts.",
+  "ms": 11102,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "24azi21ph2y": {
+  "text": "The same again: frame on, pressed down at every corner, and four legs in.",
+  "ms": 4180,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "25jmrq7xgv": {
+  "text": "Hook in the drawer rails.",
+  "ms": 1280,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "25l8z9szxai": {
+  "text": "Bolt two base quarters to the top.",
+  "ms": 1907,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "263f1vzlyx9": {
+  "text": "You'll need four cam bolts, two left cabinet runners, two right cabinet runners and sixteen runner screws.",
+  "ms": 5982,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "266sf2pv5s3": {
+  "text": "The same way: a joiner (H) into each post of the bottom half (D), the top half (C) over them, and four short bolts (a).",
+  "ms": 7576,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "26gq72nue6h": {
+  "text": "Lay the top (B) face down on a rug. Stand the base (A) on it upside down, its round plate on the top, and turn the three screws (C) through the plate into the top with the hex key (D).",
+  "ms": 10945,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "27jec1e9yaj": {
+  "text": "Bolt on the top and screw in the feet.",
+  "ms": 1907,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "287pfqdg9br": {
+  "text": "Screw the base to the top.",
+  "ms": 1384,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "28pkaxnrnwc": {
+  "text": "You'll need four left-hand drawer rails.",
+  "ms": 1855,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "299nv1rfkua": {
+  "text": "Stick on the EVA pads.",
+  "ms": 1411,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "29b1df3wpq5": {
+  "text": "You're on step one of two.",
+  "ms": 1280,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2bn4tkk6sce": {
+  "text": "And that's it. Your 4 Drawer Storage Unit On Wheels is built. Well done.",
+  "ms": 4336,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2bthck8p43i": {
+  "text": "Fit the second end frame (1) over the free ends of all six tubes and drive a screw (A) into each one.",
+  "ms": 6113,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2c41vk5xrlx": {
+  "text": "Press a paper cover (C) over each bolt head under the middle and top boards, twelve in all, and stick a felt pad (D) over each of the six under the bottom board: they are its feet.",
+  "ms": 10162,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2cpbja93jjx": {
+  "text": "An adjustable foot (b) into the bottom of each end frame post. Now tighten every bolt.",
+  "ms": 5486,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2cqrd9o6cv2": {
+  "text": "Screw on the back posts.",
+  "ms": 1332,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2dga8j8iyut": {
+  "text": "Press the top on.",
+  "ms": 1097,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2dl0q9bh2n2": {
+  "text": "Turn it over and stand it against the wall. Mark through the bracket's tab, drill, push in the wall plug (K) and drive the long screw (L) through the tab into it. Check the wall for pipes and cables first. The top takes up to 20 kg, the shelf 10 kg.",
+  "ms": 15882,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2eq3zypghqs": {
+  "text": "You'll need three left drawer runners, three right drawer runners and eighteen runner screws.",
+  "ms": 4571,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2ezid1728mj": {
+  "text": "Add the fourth frame and its legs.",
+  "ms": 1750,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2fftu2xueb6": {
+  "text": "Push a joiner (H) into the top of the two loose posts, L at the back and M at the front, press the top half (E) over them and fit four short bolts (a).",
+  "ms": 9169,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2fsm6l2bimh": {
+  "text": "You'll need five left-hand drawer rails and five right-hand drawer rails.",
+  "ms": 3971,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2ftpp8vbd46": {
+  "text": "Push the four dowels (A) into the top. Stand board 3 on its two dowels and cam bolts, slide board 2 down over it so their slots lock into a cross, and turn a cam lock (C) in each of the four wings to pull it down tight.",
+  "ms": 13949,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2g2oshqq4k4": {
+  "text": "You'll need two left drawer runners, two right drawer runners and twelve runner screws.",
+  "ms": 4232,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "2gfupn6vv1m": {
+  "text": "And that's it. Your Ryan Ribbed Console Table is built. Well done.",
+  "ms": 3971,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "329m28tnqz": {
+  "text": "You'll need six long bolts.",
+  "ms": 1463,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "376ihvrwai": {
+  "text": "Lay one slatted side (2) on a rug, curved face down. Stand a round board (1) on each of its three ledges and turn three bolts (A) through each ledge into its board with the hex key (B). Leave them a little loose.",
+  "ms": 13584,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "4arjur4mz2": {
+  "text": "You'll need a bracket screw, six felt pads, a wall bracket and twenty-four paper covers.",
+  "ms": 5068,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "55ilq0s8bn": {
+  "text": "You'll need twenty-two cam bolts, eight screws, four stop blocks and four pivot bushes.",
+  "ms": 5094,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "5jxf9f51n0": {
+  "text": "Bolt in the back rail.",
+  "ms": 1202,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "6awzp5xjwl": {
+  "text": "One drawer onto each frame, pushed in all the way.",
+  "ms": 2560,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "708m11xtpq": {
+  "text": "Pads, covers and the wall bracket.",
+  "ms": 2038,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "7wln41lpli": {
+  "text": "You'll need two wall screws, two wall plugs, two washers and two wall straps.",
+  "ms": 4441,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "92u9uu77kq": {
+  "text": "You'll need two screws and two wall brackets.",
+  "ms": 2351,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "98as5blv8g": {
+  "text": "Press a leg cap onto each corner under one frame and push a castor firmly into each cap.",
+  "ms": 5094,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "daszrxncql": {
+  "text": "Fold out the drawers.",
+  "ms": 1202,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "df6t9ffm1w": {
+  "text": "You'll need four levelling feet.",
+  "ms": 1567,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "dz4reauis9": {
+  "text": "Bolt the three boards into one side.",
+  "ms": 1985,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "folqikd446": {
+  "text": "Bolt on the other side.",
+  "ms": 1254,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "gl9vs6xkvf": {
+  "text": "Bolt the legs to the top.",
+  "ms": 1437,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "hrkwcim353": {
+  "text": "Hook four rails onto the right frame.",
+  "ms": 1907,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "hw0zwpio85": {
+  "text": "Loop a strap (g) round the top of each end frame's back post. Stand the chest against the wall, mark, drill and push in the plugs, then screw each strap to the wall through a washer (f). Check the wall for pipes and cables first.",
+  "ms": 13558,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "i0we7wslzf": {
+  "text": "And that's it. Your Linen Look 8 Drawer Chest is built. Well done.",
+  "ms": 3814,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "if3s1700bb": {
+  "text": "Lay the top on the four top legs and press it down at each corner until it sits flat.",
+  "ms": 4833,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "j0qhfnl0oh": {
+  "text": "Bolt the middle posts between the rails.",
+  "ms": 2038,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "j64oz20xtf": {
+  "text": "The two short posts join a middle rail (D) to a bottom rail (G): E at the back, F at the front. A bolt (a) down through the middle rail into the top of each post and one up through the bottom rail into its foot. Leave every bolt loose for now.",
+  "ms": 14968,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "j6dq7pl798": {
+  "text": "You'll need four eva pads.",
+  "ms": 1515,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "jvectqqb4z": {
+  "text": "Lay the rail (3) along the back of the top, its stepped ends tucked over the legs' plates, and turn the four long bolts (B) through it into the top: one through each end and two through the middle.",
+  "ms": 11207,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "k6evstnumm": {
+  "text": "Tighten all twelve bolts, then press three felt pads (G) onto the end of each leg.",
+  "ms": 5016,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "kzeg44ldsn": {
+  "text": "Screw in the feet.",
+  "ms": 993,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "l40ojvayts": {
+  "text": "You'll need four short bolts.",
+  "ms": 1489,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "lf3g00csem": {
+  "text": "Build the middle frame.",
+  "ms": 1202,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "lvwb8d9oba": {
+  "text": "You'll need two castors and two castors with brakes.",
+  "ms": 2847,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "m34uyc0fzl": {
+  "text": "Across the back of the right-hand bay: one end of the brace (J) at the top and bottom of the right frame's back post, the other two on the middle frame's, a short bolt (a) in each. Now tighten every bolt.",
+  "ms": 12304,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "mjkv5k20wy": {
+  "text": "One under each corner of the end frames: the plain castors (C) at the back, the ones with brakes (D) at the front, where the mesh rises straight up. Tighten them with the spanner (B), then tighten all twelve screws.",
+  "ms": 12591,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "p79r44vrxh": {
+  "text": "And that's it. Your Nate Hall Table is built. Well done.",
+  "ms": 3135,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "pmdk58ec37": {
+  "text": "Stand the three frames in a row, the middle one between the others. A long rail (K) runs across the front and one across the back at the floor: a long bolt (b) through each end frame into the rail's end, and one up through each rail into the middle frame's post.",
+  "ms": 15752,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "qaofdzs4lz": {
+  "text": "One into each corner. Each leg has an end that goes up: the end with the notched cap, so the narrow peg goes down into the frame.",
+  "ms": 7732,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "qo9xpn1zqx": {
+  "text": "You'll need four dowels and four cam locks.",
+  "ms": 2299,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "r4kzz05ezq": {
+  "text": "You'll need a wall screw and a wall plug.",
+  "ms": 1959,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "s2vskg2gij": {
+  "text": "You'll need four bolts.",
+  "ms": 1228,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "sf43n02is2": {
+  "text": "Lay the top (1) face down on a rug. Stand two ribbed quarters (2) on it side by side, narrow end down, and turn two bolts (C) with a washer (F) through each one's ring into the top with the hex key (E). Leave them loose.",
+  "ms": 13610,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "shxhjhfrs": {
+  "text": "Lay the front end panels (3 at the left, 5 at the right) over the boards and turn three bolts through each ledge the same way, twelve more.",
+  "ms": 8124,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "t0hxomlid2": {
+  "text": "Press a felt pad (Q) onto the end of each of the four wings.",
+  "ms": 3579,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "tb0c7w6z91": {
+  "text": "Slide in the last two tubes.",
+  "ms": 1489,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "tic7ffg06w": {
+  "text": "Fit the castors under the bottom frame.",
+  "ms": 1907,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "u2gs3mt0k2": {
+  "text": "You'll need four right-hand drawer rails.",
+  "ms": 1933,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "vssjqge9fu": {
+  "text": "The last frame and the last four legs.",
+  "ms": 2038,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "w3ow4hxxi5": {
+  "text": "Set the two U-shaped frames (C) on the middle rails, a third of the way in from each end, one leg on each rail. A bolt (a) up through the rail into each leg.",
+  "ms": 9744,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "w9gcho3qql": {
+  "text": "And that's it. Your Linen Look 5 Drawer Chest is built. Well done.",
+  "ms": 3892,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "wbuqtgm61s": {
+  "text": "Turn the table onto its pads. The top takes up to 10 kg.",
+  "ms": 3736,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "wpib9nb57y": {
+  "text": "You'll need four adjustable feet.",
+  "ms": 1776,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "wtkgerdeun": {
+  "text": "Bolt the cross brace across the back.",
+  "ms": 1985,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "wul8hufppa": {
+  "text": "Fit the top and shelf into the back panels.",
+  "ms": 2220,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "x3t6xf02cz": {
+  "text": "Lay the top (1) face down on a rug. Stand a leg (2) upside down on each end, its plate on the top and its open side facing the middle, and turn four bolts (A) through each plate into the top with the hex key (H). Leave them loose.",
+  "ms": 14106,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "x8jyb51cqv": {
+  "text": "Bolt the top on.",
+  "ms": 1123,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "xcvrar93nm": {
+  "text": "Lay the top (I) on the three frames and turn two long bolts (b) up through the top of each frame into it. Screw an adjustable foot (c) into the bottom of each end frame post.",
+  "ms": 10815,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "ymbvug675l": {
+  "text": "Join the two halves of the right frame.",
+  "ms": 1881,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "z5cm7xb5ah": {
+  "text": "The same with the big drawers (K) and their base boards (L).",
+  "ms": 3422,
+  "heard": null,
+  "ok": true,
+  "takes": 1,
+  "local": true
+ },
+ "z5l6y8lghq": {
+  "text": "And that's it. Your Underbed Shoe Drawer On Wheels is built. Well done.",
+  "ms": 3866,
   "heard": null,
   "ok": true,
   "takes": 1,
