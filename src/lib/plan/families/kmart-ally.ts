@@ -3,7 +3,8 @@ import type { CustomParams, CustomPart, CustomStep, PartPiece, ProductSpec, Vec3
 import { rotate } from "../math";
 
 /**
- * Kmart's Ally Side Table, read from its assembly manual (keycode 43533466, Black). It comes as two parts: a slatted
+ * Kmart's Ally Side Table, read from its assembly manuals (keycode 43533466, Black, and 43711307, Walnut: the two are
+ * the same page, the same parts, hardware and step, only the title differs). It comes as two parts: a slatted
  * drum base (A) that arrives made up, a ring at the floor and a round plate at the top with the slats between them,
  * a little wider at the floor, and a round top (B). In the one step the top lies face down, the base stands on it
  * upside down, and three screws (C) go through the base's plate into the top with the hex key (D); then it turns
