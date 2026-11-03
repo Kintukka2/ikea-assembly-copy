@@ -10,7 +10,7 @@ Dowel is a multi-brand fork of [Bygga](https://github.com/Nutlope/bygga) (MIT), 
 
 | | IKEA | Kmart |
 | --- | --- | --- |
-| Products / guides | 1,223 / 2,225 | 111 / 111 |
+| Products / guides | 1,223 / 2,225 | 72 / 72 |
 | Find it by | name (KALLAX), article number (802.758.87), ikea.com link | name (8 Cube Storage Unit), keycode (42633297), kmart.com.au link |
 | Guides that follow the shop's own manual | 2,139 (from Bygga) | 16, written from Kmart's PDFs: cube units, ladder shelf, Wharf, Charlie, Miles, Stevie, Linear, kids storage, trolley |
 | Voice | 1,497 clips (Together) | every Kmart line, plus the top IKEA guides' missing lines, recorded locally with the same Kokoro voice |
@@ -49,7 +49,7 @@ Every one of these follows its own Kmart manual: the same steps in the same orde
 | Kids Storage Unit with 6 Tubs | 19 | |
 | White 3 Tier Trolley | 6 | metal frame, braked castors on opposite corners |
 
-Kmart's manuals sometimes disagree with themselves: a step's count box against its own drawing or the parts list (the 6 tub unit's step 5, the Stevie cam locks, the Miles clip screws). Each recipe picks the reading the drawings and totals support and says why in its comments. The other 95 Kmart products are drawn by the kind builders from their size and layout (drawer, door and tier counts from Kmart's listings), with their keycodes.
+Kmart's manuals sometimes disagree with themselves: a step's count box against its own drawing or the parts list (the 6 tub unit's step 5, the Stevie cam locks, the Miles clip screws). Each recipe picks the reading the drawings and totals support and says why in its comments. The other 56 Kmart products are drawn by the kind builders from their size and layout, with their keycodes.
 
 ## Adding a shop
 
