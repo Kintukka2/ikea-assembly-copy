@@ -12,10 +12,15 @@ import type { CustomFix, CustomParams, CustomPart, CustomStep, PartPiece, Produc
  *   the boards go on one by one with their dowels and cams, the ledges and back slide into grooves, the rails into
  *   their holes, then panel 2 goes on top. Stood up, four plastic blocks hold the back, and two brackets tie it to
  *   the wall.
- * - Kids Storage Unit with 6 Tubs (43109814): two end panels (B), two dividers (C), a bottom (F) on two plinth rails
+ * - Kids Storage Unit with 6 Tubs (White 43109814 and Oak Look 43109838: the two manuals are the same but for the
+ *   title): two end panels (B), two dividers (C), a bottom (F) on two plinth rails
  *   (D), six short top rails (E) at the front and back of the three bays and a top (A), with a pair of tub runners
  *   on every face inside a bay. Built on its back: rails onto the dividers, the bottom on, then stood on one end for
  *   the plinths and the first end panel, back on its back for the second, and upright for the top.
+ *   Two of its count boxes disagree with their own drawings. Step 5's box says 8 cam locks, but it draws two rails
+ *   with two cams each; step 17's box shows a cam lock and says 10, but it draws 8 cam bolts (a) going into the top.
+ *   The guide uses 4 and 8, which is what the drawings show and what makes the bag's 48 cam bolts and 48 cam locks
+ *   come out right. Its step 20 only shows the finished unit, so the guide has 19 steps.
  *
  * The 3 Tub unit has no manual here, so it keeps the kind builder. Part numbers and letters are Kmart's own.
  */

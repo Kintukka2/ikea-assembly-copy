@@ -9,13 +9,15 @@ import type { CustomFix, CustomParams, CustomPart, CustomStep, PartPiece, Produc
  *
  * - The rails go onto the shelves with three screws each, and two small angle brackets go under the top shelf.
  * - Each side's halves join end to end: a dowel, two barrel nuts and two long bolts up through the lower rung.
- * - Lying on its back, the left side goes onto the shelves' ends (dowels, then a bolt through each leg into a barrel
- *   nut in the shelf), then the right side the same way. Stood up, stickers cover the bolt heads, and the brackets
- *   under the top shelf are screwed to the wall.
+ * - The joined left side lies flat on the floor and the shelves stand on their ends on it (dowels, then a bolt
+ *   through each leg into a barrel nut in the shelf); the joined right side is lowered on top the same way. Stood up,
+ *   stickers cover the bolt heads, and the brackets under the top shelf are screwed to the wall. The manual's last
+ *   step does both, so the guide splits it: 6 steps for its steps 3 to 7.
  *
  * Kmart's letters are the labels: A to D the frame halves, E the back rails, F to I the shelves top to bottom, J the
  * short back rail. Each shelf end takes two bolts (front and back leg), the rail end two dowels, and the shelves that
  * sit on a rung one more dowel into it: 11 dowels a side plus one at each joint, 24 in all, as the box has.
+ * Fittings have plain names; the manual's hardware letters (a, b and d to j, it has no c) are in the step text.
  */
 
 const T = 15; // frame and shelf thickness
@@ -143,57 +145,66 @@ function ladder(s: ProductSpec): CustomParams {
 
   const yF = shelfY.F - T / 2;
   const bx = [-W / 2 + 150, W / 2 - 150].map(Math.round);
+  // built as the manual draws it, lying on its left side: the shelves wait standing in front of it until the joined
+  // left side lies on the floor, and the joined right side waits flat on the floor behind it until it goes on top
+  const shelvesAway: Vec3 = [0, 0, 700];
+  const rightAway: Vec3 = [-(W - T) / 1.6, 0, -700];
+  const SHELF_PARTS = ["F", "EF", "G", "EG", "H", "EH", "I", "EI"];
+  const onSide = "+x" as const;
   const steps: CustomStep[] = [
     {
       title: "Screw a back rail onto each shelf",
-      detail: "Stand a rail on the back edge of each shelf and drive three screws up through the shelf into it. Screw the two small angle brackets under the top shelf at the back, for the wall.",
-      add: ["F", "EF", "G", "EG", "H", "EH", "I", "EI"],
+      detail: "Stand a back rail E on the back edge of each shelf and drive three screws (a) through the shelf into it. Screw the two small angle brackets (f) under the top shelf F at the back with the short screws (g), for the wall.",
+      wait: SHELF_PARTS,
+      from: Object.fromEntries(SHELF_PARTS.map((id) => [id, shelvesAway])),
       fix: [
         ...SH.map((id) => fx(SCREW_A, xr.map((x): Vec3 => [x, shelfY[id] - T / 2, zr]), [0, 1, 0], id, `E${id}`)),
         fx(BRACKET_F, bx.map((x): Vec3 => [x, yF, -D / 2 + 10]), [0, 1, 0], "F"),
         fx(SCREW_G, bx.map((x): Vec3 => [x + 23, yF, -D / 2 + 12]), [0, 1, 0], "F"),
       ],
       tools: ["screwdriver"],
-      pose: "+z",
+      pose: onSide,
     },
     {
       title: "Join the two halves of each side",
-      detail: "Put a dowel in the joint and the two barrel nuts in the upper rung, then drive the long bolts up through the lower rung into them. Turn the nuts with a screwdriver until it pulls tight, then cover them with stickers.",
-      wait: ["A", "B", "C", "D"],
-      from: { A: [-420, 0, 0], B: [-420, 0, 0], C: [420, 0, 0], D: [420, 0, 0] },
+      detail: "Lay frames A and B flat on a rug, end to end, and C and D beside them. Put a dowel (b) in each joint and two barrel nuts (e) in the upper rung, then drive the long bolts (d) through the lower rung into them. Turn the nuts with a screwdriver until it pulls tight, then cover them with stickers (j).",
+      add: ["B", "A"],
+      wait: ["C", "D"],
+      from: { B: [400, 0, 0], A: [0, 320, 0], C: rightAway, D: rightAway },
       fix: [...joint(-1, "B", "A"), ...joint(1, "D", "C")],
       tools: ["screwdriver"],
-      pose: "+z",
-    },
-    {
-      title: "Fix the shelves to the left side",
-      detail: "On a flat floor, with the shelves on their back edges, push dowels into the ends of the rails and the lower three shelves. Push the left side on with the short rail at the joint, drop a barrel nut into each shelf end and drive a bolt through each leg into it.",
-      add: ["J", "A", "B"],
-      from: { J: [0, 0, 380], A: [-420, 0, 0], B: [-420, 0, 0] },
-      fix: sideFix(-1),
-      tools: ["screwdriver"],
-      pose: "+z",
+      pose: onSide,
       warnings: ["floor"],
     },
     {
-      title: "Fix the right side on",
-      detail: "The same at the other ends: dowels in, the right side pushed on, a barrel nut in each shelf and a bolt through each leg. Tighten every bolt before you lift it.",
-      add: ["C", "D"],
-      from: { C: [420, 0, 0], D: [420, 0, 0] },
-      fix: sideFix(1),
+      title: "Stand the shelves on the left side",
+      detail: "Leave the joined left side flat on the floor. Push dowels (b) into the ends of the rails and the lower three shelves, and stand each shelf on its end on the left side, the short rail J at the joint. Drop a barrel nut (e) into each shelf end and drive a bolt (d) through each leg into it.",
+      add: [...SHELF_PARTS, "J"],
+      from: { J: [320, 0, 0] },
+      fix: sideFix(-1),
       tools: ["screwdriver"],
-      pose: "+z",
-      check: "square",
+      pose: onSide,
+      warnings: ["floor"],
     },
     {
+      title: "Lower the right side on",
+      detail: "Dowels (b) into the free ends, then lower the joined right side onto them, the short rail at its joint. Drive a bolt (d) through each leg into a barrel nut (e) in each shelf, and tighten every bolt before you lift it.",
+      add: ["C", "D"],
+      fix: sideFix(1),
+      tools: ["screwdriver"],
+      pose: onSide,
+      check: "square",
+    },
+    // the manual's last step does two jobs, stickers and the wall fixing, so the guide splits it
+    {
       title: "Stand it up and cover the bolt heads",
-      detail: "Lift it upright where it will stand, back legs to the wall, and press a sticker over each bolt head on the outside of both sides.",
+      detail: "Lift it upright where it will stand, back legs to the wall, and press a sticker (j) over each bolt head on the outside of both sides.",
       fix: [...stickers(-1), ...stickers(1)],
       pose: "+y",
     },
     {
       title: "Fix it to the wall",
-      detail: "Mark through the two brackets under the top shelf, drill, push in the plugs and screw through the brackets into them. Check the wall for pipes and cables first.",
+      detail: "Mark through the two brackets under the top shelf, drill, push in the plugs (h) and screw through the brackets into them (i). Check the wall for pipes and cables first.",
       fix: [
         fx(PLUG_H, bx.map((x): Vec3 => [x - 23, yF - 12, -D / 2 - 30]), [0, 0, -1]),
         fx(WALL_I, bx.map((x): Vec3 => [x - 23, yF - 12, -D / 2 + 2]), [0, 0, -1], "F"),

@@ -11,7 +11,8 @@
  * that markup is Kokoro-on-Together syntax the local runner doesn't read.
  */
 import { execFileSync } from "node:child_process";
-import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { PRODUCTS, toSpec } from "@/lib/catalog";
 import { buildPlan } from "@/lib/plan";
@@ -49,14 +50,22 @@ function list(file: string) {
   console.log(`${picked.length} guides, ${lines.size} lines, ${todo.length} without a clip (${chars} characters) -> ${file}`);
 }
 
-/** The same finish as scripts/voice/record.ts: trim silence, fade the edges, two-pass loudness to -16 LUFS, mono 64 kbps. */
+/**
+ * The same finish as scripts/voice/record.ts: trim silence, fade the edges, two-pass loudness to -16 LUFS, mono 64 kbps.
+ * The trim is written out first: in one chain with loudnorm, ffmpeg 6 stalls on some clips and leaves the mp3 cut short.
+ */
+const TRIMMED = mkdtempSync(path.join(tmpdir(), "voice-"));
 function finish(raw: string, out: string) {
   const trim = "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.03,areverse,silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.03,afade=t=in:d=0.02,areverse,afade=t=in:d=0.01";
-  const probe = execFileSync("sh", ["-c", `ffmpeg -hide_banner -i "${raw}" -af "${trim},loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json" -f null - 2>&1`], { encoding: "utf8" });
+  const cut = path.join(TRIMMED, path.basename(raw));
+  const run = { encoding: "utf8", timeout: 60_000 } as const; // a stall fails the run instead of hanging it
+  execFileSync("ffmpeg", ["-nostdin", "-v", "error", "-y", "-i", raw, "-af", trim, cut], run);
+  const probe = execFileSync("sh", ["-c", `ffmpeg -nostdin -hide_banner -i "${cut}" -af "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json" -f null - 2>&1`], run);
   const m = JSON.parse(probe.slice(probe.lastIndexOf("{"), probe.lastIndexOf("}") + 1));
   const ln = `loudnorm=I=-16:TP=-1.5:LRA=11:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`;
-  execFileSync("ffmpeg", ["-v", "error", "-y", "-i", raw, "-af", `${trim},${ln},aresample=44100`, "-ac", "1", "-c:a", "libmp3lame", "-b:a", "64k", out]);
-  return Math.round(Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out], { encoding: "utf8" })) * 1000);
+  execFileSync("ffmpeg", ["-nostdin", "-v", "error", "-y", "-i", cut, "-af", `${ln},aresample=44100`, "-ac", "1", "-c:a", "libmp3lame", "-b:a", "64k", out], run);
+  rmSync(cut);
+  return Math.round(Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out], run)) * 1000);
 }
 
 function done(dir: string) {
