@@ -10,9 +10,9 @@ Dowel is a multi-brand fork of [Bygga](https://github.com/Nutlope/bygga) (MIT), 
 
 | | IKEA | Kmart |
 | --- | --- | --- |
-| Products / guides | 1,223 / 2,225 | 72 / 72 |
+| Products / guides | 1,223 / 2,225 | 16 / 16 |
 | Find it by | name (KALLAX), article number (802.758.87), ikea.com link | name (8 Cube Storage Unit), keycode (42633297), kmart.com.au link |
-| Guides that follow the shop's own manual | 2,139 (from Bygga) | 16, written from Kmart's PDFs: cube units, ladder shelf, Wharf, Charlie, Miles, Stevie, Linear, kids storage, trolley |
+| Guides that follow the shop's own manual | 2,139 (from Bygga) | all 16, written from Kmart's PDFs: cube units, ladder shelf, Wharf, Charlie, Miles, Stevie, Linear, kids storage, trolley |
 | Voice | 1,497 clips (Together) | every Kmart line, plus the top IKEA guides' missing lines, recorded locally with the same Kokoro voice |
 
 - **One search for every shop.** "All shops / IKEA / Kmart" switch, brand tags on every result, and brand words in the query work too: `kmart bookcase`, `IKEA KALLAX`, `my billy` and `the kallax` all land right (Bygga's search read "IKEA" or "my" as the product name).
@@ -49,13 +49,13 @@ Every one of these follows its own Kmart manual: the same steps in the same orde
 | Kids Storage Unit with 6 Tubs | 19 | |
 | White 3 Tier Trolley | 6 | metal frame, braked castors on opposite corners |
 
-Kmart's manuals sometimes disagree with themselves: a step's count box against its own drawing or the parts list (the 6 tub unit's step 5, the Stevie cam locks, the Miles clip screws). Each recipe picks the reading the drawings and totals support and says why in its comments. The other 56 Kmart products are drawn by the kind builders from their size and layout, with their keycodes.
+Kmart's manuals sometimes disagree with themselves: a step's count box against its own drawing or the parts list (the 6 tub unit's step 5, the Stevie cam locks, the Miles clip screws). Each recipe picks the reading the drawings and totals support and says why in its comments. A Kmart product is listed only once a recipe follows its manual: the kind builders make parts and fittings up from the size, so `npm run kmart:check` fails on any Kmart product they would draw.
 
 ## Adding a shop
 
 1. `src/lib/brands.ts`: the shop's name, owner, how it numbers products, where its manuals live, examples for the search box.
 2. `src/data/<shop>.ts`: one row per product (name, line, kind, size in cm, keycodes per colour). `src/lib/catalog.ts` turns rows into guides with the kind builders, slugs `<shop>-<name>`.
-3. `src/lib/plan/families/<shop>-<line>.ts`: recipes read from the shop's manuals, keyed `"<SHOP>:<LINE>"`, for the products that deserve an exact guide.
+3. `src/lib/plan/families/<shop>-<line>.ts`: recipes read from the shop's manuals, keyed `"<SHOP>:<LINE>"`, one for every product listed: a product without one would get a kind builder's made-up parts and counts.
 4. `npm run kmart:check` (or a copy for the new shop), `npm run families`, `npm run voice:local`, `node scripts/og/render.mjs --missing`.
 
 ## Running it

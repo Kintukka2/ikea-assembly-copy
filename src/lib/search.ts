@@ -269,7 +269,7 @@ export function guessSpec(q: string): ProductSpec | null {
 
 export const FEATURED = PRODUCTS.filter((e) => e.featured);
 /** The home page's pick: the best known flat packs, taking turns between the shops. */
-export const POPULAR = ["kallax-2x2", "kmart-8-cube-storage-unit", "billy-80x202", "kmart-charlie-6-drawer-chest", "malm-3-drawers", "kmart-4-tier-ladder-shelf", "lack-side-table", "kmart-wharf-student-desk", "linnmon-adils-desk", "kmart-4-cube-storage-unit", "malm-bed-160", "kmart-hamptons-bedside-table", "brimnes-wardrobe", "kmart-nate-coffee-table", "hemnes-3-drawers", "kmart-confetti-table-and-chair-set", "frosta-stool"]
+export const POPULAR = ["kallax-2x2", "kmart-8-cube-storage-unit", "billy-80x202", "kmart-charlie-6-drawer-chest", "malm-3-drawers", "kmart-4-tier-ladder-shelf", "lack-side-table", "kmart-wharf-student-desk", "linnmon-adils-desk", "kmart-4-cube-storage-unit", "malm-bed-160", "kmart-charlie-2-drawer-bedside-table", "brimnes-wardrobe", "kmart-charlie-entertainment-unit", "hemnes-3-drawers", "kmart-kids-bookcase-with-storage", "frosta-stool"]
   .map((s) => PRODUCTS.find((e) => e.slug === s)!)
   .filter(Boolean);
 export const PRODUCT_COUNT = new Set(PRODUCTS.map((p) => fold(p.name) + "|" + p.category)).size;
