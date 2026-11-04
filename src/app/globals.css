@@ -10,6 +10,26 @@
   --accent: #ff8a3d;
   --accent-soft: #ffe8d8;
   --accent-ink: #4a1d00;
+  /* text and icons on the accent */
+  --on-accent: var(--ink);
+  /* the main buttons */
+  --primary: var(--ink);
+  --primary-hover: #000;
+  --on-primary: #fff;
+  /* the picked shop in the shop switch */
+  --pill: var(--ink);
+  --on-pill: #fff;
+  /* the hero headline */
+  --title: var(--ink);
+  /* the header and what sits on it */
+  --head-bg: color-mix(in srgb, var(--page) 88%, transparent);
+  --head-ink: var(--ink);
+  --head-ink-2: var(--ink-2);
+  --head-line: var(--line-2);
+  --head-active: var(--ink);
+  --head-chip: rgba(18, 18, 18, 0.07);
+  --head-mark: var(--ink);
+  --head-dowel: var(--accent);
   --blue: #0a5bd3;
   --ok: #157f45;
   --miss: #c8371d;
@@ -130,7 +150,21 @@ a:hover .arrow-out svg + svg {
 
 ::selection {
   background: var(--accent);
-  color: var(--ink);
+  color: var(--on-accent);
+}
+
+/*
+ * Picking a shop (src/lib/useShop.ts) swaps the colours above for that shop's (SHOP_THEME_CSS, from
+ * src/lib/brands.ts) inside a view transition: the new look grows as a circle from the button over a still
+ * picture of the old one, so the usual crossfade is switched off. Taps during it reach the live page.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition {
+  pointer-events: none;
 }
 
 /* ---------- stage ---------- */
@@ -246,6 +280,7 @@ a:hover .arrow-out svg + svg {
 
 .stage-label.lit {
   background: var(--accent);
+  color: var(--on-accent);
 }
 
 .stage-callout {

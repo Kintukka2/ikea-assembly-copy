@@ -5,9 +5,8 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { POPULAR, articleNo, fold, keycodeOf, kindOf, loadArticles, searchCatalog, searchText, slugify } from "@/lib/search";
 import { KEYCODES } from "@/lib/catalog";
-import { BRANDS, BRAND_IDS, brandOf, leadBrand, type BrandId } from "@/lib/brands";
-import { getPref, setPref } from "@/lib/store";
-import { useMounted } from "@/lib/useMounted";
+import { BRANDS, brandOf, leadBrand, type BrandId } from "@/lib/brands";
+import { useShop } from "@/lib/useShop";
 import { articleSlug } from "@/lib/ikea";
 import { PRODUCTS, type CatalogEntry } from "@/lib/catalog";
 import { KIND_ARCH, type Kind } from "@/lib/products";
@@ -16,6 +15,7 @@ import Drawing from "../Drawing";
 import { useUserKey } from "@/lib/userKey";
 import { Dots } from "../guide/ui";
 import { IArrowRight, IClock, IClose, ISearch } from "../art/Icons";
+import ShopPicker from "./ShopPicker";
 
 /** Tabs over the kinds of furniture. Kids and Outdoor cut across them, by keyword. */
 export const CATS: { id: string; label: string; kinds?: Kind[]; tag?: string }[] = [
@@ -86,13 +86,11 @@ export function ProductCard({ e, i = 0 }: { e: CatalogEntry; i?: number }) {
  * a page of cards at a time (each card's drawing renders only while it is on screen).
  */
 export function Catalog({ limit, search }: { limit?: number; search?: boolean }) {
-  const mounted = useMounted();
   const [cat, setCat] = useState("all");
   const [q, setQ] = useState("");
   const [more, setMore] = useState({ view: "", n: PAGE });
   const [articles, setArticles] = useState(false);
-  const [shopPick, setShop] = useState<BrandId | "all" | null>(null);
-  const shop: BrandId | "all" = shopPick ?? (mounted ? getPref<BrandId | "all">("shop", "all") : "all");
+  const shop = useShop();
   // a shop named in the filter ("kmart drawers") picks the shop too
   const lead = search ? leadBrand(q) : { brand: null, rest: q };
   const only: BrandId | null = lead.brand ?? (shop === "all" ? null : shop);
@@ -144,26 +142,13 @@ export function Catalog({ limit, search }: { limit?: number; search?: boolean })
 
   return (
     <div className="catalog">
-      <div className="shops cat-shops" role="radiogroup" aria-label="Shop">
-        {(["all", ...BRAND_IDS] as const).map((b) => (
-          <button
-            key={b}
-            type="button"
-            role="radio"
-            aria-checked={shop === b}
-            className={"shop" + (shop === b ? " on" : "")}
-            onClick={() => {
-              setShop(b);
-              setPref("shop", b);
-              // a tab can be empty in another shop's range
-              if (search) setCat("all");
-            }}
-          >
-            {shop === b && <motion.span layoutId={"shop-pill" + (search ? "b" : "h")} className="shop-pill" transition={{ type: "spring", stiffness: 500, damping: 38 }} />}
-            <span className="shop-label">{b === "all" ? "All shops" : BRANDS[b].name}</span>
-          </button>
-        ))}
-      </div>
+      <ShopPicker
+        label="Shop"
+        pill={"shop-pill" + (search ? "b" : "h")}
+        className="cat-shops"
+        // a tab can be empty in another shop's range
+        onPick={() => search && setCat("all")}
+      />
       <div className="cat-bar">
         {search && (
           <label className="cat-search">

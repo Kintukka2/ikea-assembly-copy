@@ -4,13 +4,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { articleNo, articlesReady, loadArticles, searchCatalog, slugify, matchCatalog } from "@/lib/search";
-import { BRANDS, BRAND_IDS, brandOf, type BrandId } from "@/lib/brands";
-import { getPref, setPref } from "@/lib/store";
-import { useMounted } from "@/lib/useMounted";
+import { BRANDS, brandOf, type BrandId } from "@/lib/brands";
+import { useShop } from "@/lib/useShop";
 import Drawing from "../Drawing";
 import { keyHeaders } from "@/lib/userKey";
 import { IArrowRight, ICamera, ISearch, ISparkle } from "../art/Icons";
 import KeyModal, { type KeyTrouble } from "../KeyModal";
+import ShopPicker from "./ShopPicker";
 
 /** What the placeholder types out, per shop: names and numbers as they're printed on the box. */
 const EXAMPLES: Record<BrandId | "all", string[]> = {
@@ -21,11 +21,9 @@ const EXAMPLES: Record<BrandId | "all", string[]> = {
 
 export default function Search({ ai, autoFocus }: { ai: boolean; autoFocus?: boolean }) {
   const router = useRouter();
-  const mounted = useMounted();
   const [q, setQ] = useState("");
-  // which shop's products to look through; remembered on this device
-  const [shopPick, setShop] = useState<BrandId | "all" | null>(null);
-  const shop: BrandId | "all" = shopPick ?? (mounted ? getPref<BrandId | "all">("shop", "all") : "all");
+  // which shop's products to look through: shared with every switch on the page, remembered on this device
+  const shop = useShop();
   const only = shop === "all" ? null : shop;
   const [focus, setFocus] = useState(false);
   const [sel, setSel] = useState(0);
@@ -126,25 +124,7 @@ export default function Search({ ai, autoFocus }: { ai: boolean; autoFocus?: boo
 
   return (
     <div className={"search" + (open ? " open" : "")}>
-      <div className="shops" role="radiogroup" aria-label="Which shop is it from?">
-        {(["all", ...BRAND_IDS] as const).map((b) => (
-          <button
-            key={b}
-            type="button"
-            role="radio"
-            aria-checked={shop === b}
-            className={"shop" + (shop === b ? " on" : "")}
-            onClick={() => {
-              setShop(b);
-              setPref("shop", b);
-              input.current?.focus();
-            }}
-          >
-            {shop === b && <motion.span layoutId="shop-pill" className="shop-pill" transition={{ type: "spring", stiffness: 500, damping: 38 }} />}
-            <span className="shop-label">{b === "all" ? "All shops" : BRANDS[b].name}</span>
-          </button>
-        ))}
-      </div>
+      <ShopPicker label="Which shop is it from?" pill="shop-pill" onPick={() => input.current?.focus()} />
       <form
         className="search-box"
         onSubmit={(e) => {
