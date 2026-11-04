@@ -154,7 +154,7 @@ export function Crew({ names, size = 120, className }: { names: string; size?: n
       </g>
       <g className="crew-board">
         <rect x={11} y={46} width={104} height={21} rx={2.5} fill="var(--accent)" stroke={INK} strokeWidth={2.2} />
-        <text x={63} y={60.2} textAnchor="middle" fontSize={10} fontWeight={800} letterSpacing={-0.2} fill={INK} fontFamily="var(--display)">
+        <text x={63} y={60.2} textAnchor="middle" fontSize={10} fontWeight={800} letterSpacing={-0.2} fill="var(--on-accent)" fontFamily="var(--display)">
           {names}
         </text>
         {hands.map(([x, y], i) => (

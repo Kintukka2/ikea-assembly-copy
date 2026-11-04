@@ -17,9 +17,18 @@
   gap: 16px;
   margin: 0 -28px;
   padding: 0 28px;
-  background: color-mix(in srgb, var(--page) 88%, transparent);
+  background: var(--head-bg);
   backdrop-filter: saturate(1.4) blur(14px);
   -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  --mark: var(--head-mark);
+  --mark-dowel: var(--head-dowel);
+}
+/* a picked shop's header is a solid band of its colour, edge to edge however wide the window */
+:root[data-shop]:has(.site) .site-head {
+  background: none;
+  border-image: conic-gradient(var(--head-bg) 0 0) fill 0 // 0 100vmax;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 .head-left {
   display: flex;
@@ -34,6 +43,9 @@
   text-decoration: none;
   color: var(--ink);
   border-radius: 8px;
+}
+.site-head .logo {
+  color: var(--head-ink);
 }
 .wordmark {
   font-family: var(--display);
@@ -58,7 +70,7 @@
   border-radius: 8px;
   font-weight: 500;
   font-size: 14.5px;
-  color: var(--ink-2);
+  color: var(--head-ink-2);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -71,24 +83,24 @@
   height: 2px;
   margin-left: -7px;
   border-radius: 2px;
-  background: var(--line-2);
+  background: var(--head-line);
   transform: scaleX(0);
   transition:
     transform 0.25s var(--ease),
     background 0.2s;
 }
 .nav-link:hover {
-  color: var(--ink);
+  color: var(--head-ink);
 }
 .nav-link:hover::after {
   transform: scaleX(1);
 }
 .nav-link.on {
-  color: var(--ink);
+  color: var(--head-ink);
 }
 .nav-link.on::after {
   transform: scaleX(1);
-  background: var(--ink);
+  background: var(--head-active);
 }
 .nav-count {
   display: inline-grid;
@@ -97,8 +109,8 @@
   height: 18px;
   padding: 0 5px;
   border-radius: 5px;
-  background: rgba(18, 18, 18, 0.07);
-  color: var(--ink-2);
+  background: var(--head-chip);
+  color: var(--head-ink-2);
   font-size: 11.5px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -182,6 +194,11 @@
   font-weight: 800;
   text-wrap: balance;
 }
+/* a page's own title wears the picked shop's colour; section titles stay in ink */
+.page-head h1,
+.ws-head h1 {
+  color: var(--title);
+}
 .sec-link {
   display: inline-flex;
   align-items: center;
@@ -234,6 +251,7 @@
   letter-spacing: -0.045em;
   font-weight: 800;
   margin: 0;
+  color: var(--title);
 }
 .hero .lead {
   margin: 20px 0 28px;
@@ -318,7 +336,7 @@
 }
 .search-box:focus-within {
   box-shadow:
-    0 0 0 2px var(--ink),
+    0 0 0 2px var(--primary),
     0 6px 16px -14px rgba(18, 18, 18, 0.14);
 }
 .search-ico {
@@ -385,8 +403,8 @@
   height: 50px;
   border-radius: 50%;
   border: 0;
-  background: var(--ink);
-  color: #fff;
+  background: var(--primary);
+  color: var(--on-primary);
   cursor: pointer;
   display: grid;
   place-items: center;
@@ -400,7 +418,7 @@
   transition: transform 0.25s var(--ease);
 }
 .go-btn:hover {
-  background: #000;
+  background: var(--primary-hover);
 }
 .go-btn:hover svg {
   transform: translateX(2px);
@@ -613,8 +631,8 @@
   height: 40px;
   padding: 0 16px;
   border-radius: 999px;
-  background: var(--ink);
-  color: #fff;
+  background: var(--primary);
+  color: var(--on-primary);
   font-weight: 500;
   font-size: 14.5px;
   text-decoration: none;
@@ -624,7 +642,7 @@
   transition: transform 0.25s var(--ease);
 }
 .hero-go:hover {
-  background: #000;
+  background: var(--primary-hover);
 }
 .hero-go:hover svg {
   transform: translateX(2px);
@@ -840,7 +858,7 @@
   transition: box-shadow 0.2s;
 }
 .cat-search:focus-within {
-  box-shadow: 0 0 0 2px var(--ink);
+  box-shadow: 0 0 0 2px var(--primary);
 }
 .cat-search input {
   border: 0;
@@ -987,8 +1005,8 @@
   height: 44px;
   padding: 0 18px 0 20px;
   border-radius: 999px;
-  background: var(--ink);
-  color: #fff;
+  background: var(--primary);
+  color: var(--on-primary);
   font-weight: 600;
   text-decoration: none;
 }
@@ -1159,7 +1177,7 @@
 }
 .cmp-pin.dowel.lit {
   background: var(--accent);
-  color: var(--ink);
+  color: var(--on-accent);
   box-shadow:
     0 0 0 3px #fff,
     0 0 0 5px var(--ink);
@@ -1221,7 +1239,7 @@
 }
 .cmp-qa li.lit .cmp-qa-n {
   background: var(--accent);
-  color: var(--ink);
+  color: var(--on-accent);
 }
 .cmp-q {
   margin: 2px 0 0;
@@ -1279,12 +1297,17 @@
   height: 48px;
   padding: 0 20px 0 22px;
   border-radius: 999px;
-  background: var(--ink);
-  color: #fff;
+  background: var(--primary);
+  color: var(--on-primary);
   font-weight: 600;
   font-size: 15.5px;
   text-decoration: none;
-  transition: transform 0.2s var(--ease);
+  transition:
+    transform 0.2s var(--ease),
+    background 0.2s;
+}
+.cmp-cta:hover {
+  background: var(--primary-hover);
 }
 .cmp-cta svg {
   transition: transform 0.25s var(--ease);
@@ -1912,7 +1935,7 @@
   font-weight: 800;
 }
 .badge.on .badge-ico {
-  color: var(--ink);
+  color: var(--on-accent);
   background: var(--accent);
   box-shadow: inset 0 0 0 1.8px var(--ink);
 }
@@ -2381,13 +2404,13 @@
   color: var(--ink);
 }
 .shop.on {
-  color: #fff;
+  color: var(--on-pill);
 }
 .shop-pill {
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  background: var(--ink);
+  background: var(--pill);
 }
 .shop-label {
   position: relative;

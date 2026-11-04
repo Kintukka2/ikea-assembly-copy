@@ -3,7 +3,7 @@ import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HeroStage from "@/components/home/HeroStage";
-import { HeroSearch } from "@/components/home/HomeClient";
+import { HeroSearch, QuickPicks } from "@/components/home/HomeClient";
 import Resume from "@/components/home/Resume";
 import { Catalog } from "@/components/home/Sections";
 import Compare from "@/components/home/Compare";
@@ -17,14 +17,6 @@ import { BRANDS, BRAND_IDS } from "@/lib/brands";
 import { SCAN_ENABLED } from "@/lib/site";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
-
-const QUICK = [
-  { slug: "kallax-2x2", label: "KALLAX" },
-  { slug: "kmart-8-cube-storage-unit", label: "8 Cube Unit" },
-  { slug: "malm-3-drawers", label: "MALM" },
-  { slug: "kmart-4-tier-ladder-shelf", label: "Ladder Shelf" },
-  { slug: "billy-80x202", label: "BILLY" },
-];
 
 export default function Home() {
   return (
@@ -49,14 +41,7 @@ export default function Home() {
           </h1>
           <p className="lead">Type the name or number from the box, from IKEA or Kmart. Each step plays in 3D and is read out loud, with the parts, screws and tools it needs.</p>
           <HeroSearch />
-          <div className="quick">
-            <span>Try</span>
-            {QUICK.map((q) => (
-              <Link key={q.slug} href={`/build/${q.slug}`} className="chip">
-                {q.label}
-              </Link>
-            ))}
-          </div>
+          <QuickPicks />
           <Resume />
           {SCAN_ENABLED && (
             <Link href="/scan" className="scan-link">
@@ -82,7 +67,7 @@ export default function Home() {
                 <path d="M30 60 L110 38 L190 60" fill="#f2f0eb" stroke="var(--ink)" strokeWidth="2.2" strokeLinejoin="round" />
                 <g transform="translate(122 98) skewY(-15)">
                   <rect x="0" y="0" width="56" height="26" rx="3" fill="var(--accent)" stroke="var(--ink)" strokeWidth="2" />
-                  <text x="28" y="18" textAnchor="middle" fontSize="12" fontWeight="800" fill="var(--ink)" fontFamily="var(--font)">
+                  <text x="28" y="18" textAnchor="middle" fontSize="12" fontWeight="800" fill="var(--on-accent)" fontFamily="var(--font)">
                     KALLAX
                   </text>
                 </g>

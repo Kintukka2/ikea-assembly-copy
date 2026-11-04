@@ -30,6 +30,52 @@ export interface Brand {
   caps: boolean;
   /** what the search box types out when this shop is picked */
   examples: string[];
+  /** the colours the site pages take on while this shop is picked (src/lib/shop.ts) */
+  theme: BrandTheme;
+}
+
+/**
+ * A shop's look for the site pages, in our own words: its colours on Dowel's layout, never its logo, type or
+ * pictures. Each key is a CSS custom property (accentSoft is --accent-soft, ink2 is --ink-2), and globals.css
+ * holds Dowel's own values for every one of them. Guides keep Dowel's drawing style whatever is picked.
+ */
+export interface BrandTheme {
+  /** behind the cards, the sunk tracks and the hairlines */
+  page: string;
+  sunk: string;
+  line: string;
+  line2: string;
+  /** text, strongest to softest */
+  ink: string;
+  ink2: string;
+  ink3: string;
+  /** the marker colour: selections, lit pins, the logo's dowel, and what sits on it */
+  accent: string;
+  accentSoft: string;
+  onAccent: string;
+  /** the main buttons: search, Build this, Try it */
+  primary: string;
+  primaryHover: string;
+  onPrimary: string;
+  /** the picked shop in the shop switch */
+  pill: string;
+  onPill: string;
+  /** the hero headline */
+  title: string;
+  /** the part being added in a drawing, lightest face to the hole it goes in: Dowel's are peach */
+  tint1: string;
+  tint2: string;
+  tint3: string;
+  tint4: string;
+  /** the header band and what sits on it */
+  headBg: string;
+  headInk: string;
+  headInk2: string;
+  headLine: string;
+  headActive: string;
+  headChip: string;
+  headMark: string;
+  headDowel: string;
 }
 
 export const BRANDS: Record<BrandId, Brand> = {
@@ -45,6 +91,37 @@ export const BRANDS: Record<BrandId, Brand> = {
     manualUrl: (name) => `https://www.ikea.com/search/?q=${encodeURIComponent(name)}`,
     caps: true,
     examples: ["KALLAX", "MALM 3 drawers", "802.758.87", "BILLY bookcase"],
+    // blue and yellow, on cool greys
+    theme: {
+      page: "#f2f5f9",
+      sunk: "#e8edf3",
+      line: "#dfe5ed",
+      line2: "#c8d2de",
+      ink: "#111111",
+      ink2: "#484848",
+      ink3: "#676767",
+      accent: "#ffdb00",
+      accentSoft: "#fff1a6",
+      onAccent: "#0058a3",
+      primary: "#0058a3",
+      primaryHover: "#004a8c",
+      onPrimary: "#ffffff",
+      pill: "#ffdb00",
+      onPill: "#0058a3",
+      title: "#0058a3",
+      tint1: "#fffbe3",
+      tint2: "#fff3bd",
+      tint3: "#f4e4a0",
+      tint4: "#ecd67e",
+      headBg: "#0058a3",
+      headInk: "#ffffff",
+      headInk2: "rgba(255, 255, 255, 0.84)",
+      headLine: "rgba(255, 255, 255, 0.4)",
+      headActive: "#ffdb00",
+      headChip: "rgba(255, 255, 255, 0.2)",
+      headMark: "#ffdb00",
+      headDowel: "#0058a3",
+    },
   },
   kmart: {
     id: "kmart",
@@ -59,6 +136,37 @@ export const BRANDS: Record<BrandId, Brand> = {
     manualUrl: (name, number) => `https://www.kmart.com.au/search/?searchTerm=${encodeURIComponent(number ?? name)}`,
     caps: false,
     examples: ["8 Cube Storage Unit", "Charlie 6 Drawer Chest", "42633297", "Ladder Shelf", "Kids Bookcase"],
+    // red and white, on neutral greys: the red is the logo's own, and its blue is left to IKEA's look
+    theme: {
+      page: "#f4f4f4",
+      sunk: "#ececec",
+      line: "#e2e2e2",
+      line2: "#cfcfcf",
+      ink: "#141414",
+      ink2: "#4a4a4a",
+      ink3: "#696969",
+      accent: "#dd182c",
+      accentSoft: "#ffdfe2",
+      onAccent: "#ffffff",
+      primary: "#dd182c",
+      primaryHover: "#bb1425",
+      onPrimary: "#ffffff",
+      pill: "#dd182c",
+      onPill: "#ffffff",
+      title: "#dd182c",
+      tint1: "#fff1f2",
+      tint2: "#ffe0e3",
+      tint3: "#f6cdd1",
+      tint4: "#efb6bc",
+      headBg: "#dd182c",
+      headInk: "#ffffff",
+      headInk2: "#ffffff",
+      headLine: "rgba(255, 255, 255, 0.45)",
+      headActive: "#ffffff",
+      headChip: "rgba(255, 255, 255, 0.24)",
+      headMark: "#ffffff",
+      headDowel: "#dd182c",
+    },
   },
 };
 

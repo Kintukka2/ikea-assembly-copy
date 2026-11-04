@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Offline from "@/components/Offline";
 import MotionPrefs from "@/components/MotionPrefs";
 import { SITE_URL } from "@/lib/site";
+import { SHOP_SCRIPT, SHOP_THEME_CSS } from "@/lib/shop";
 
 const noto = Noto_Sans({
   subsets: ["latin", "latin-ext"],
@@ -44,7 +45,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${noto.variable} ${display.variable}`}>
+    // the shop script sets data-shop on <html> before React hydrates; React keeps it
+    <html lang="en" className={`${noto.variable} ${display.variable}`} suppressHydrationWarning>
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: SHOP_THEME_CSS }} />
+        <script dangerouslySetInnerHTML={{ __html: SHOP_SCRIPT }} />
+      </head>
       <body>
         <MotionPrefs>{children}</MotionPrefs>
         <Analytics />

@@ -11,7 +11,7 @@ This version has breaking changes: APIs, conventions and file structure may diff
 
 ## Brands
 
-- Everything brand specific lives in `src/lib/brands.ts`: name, owner, how it numbers products, where its manual is, the disclaimer. Add a shop there first.
+- Everything brand specific lives in `src/lib/brands.ts`: name, owner, how it numbers products, where its manual is, the disclaimer, and the colours the site pages wear while it is picked (`theme`, turned into CSS by `src/lib/shop.ts`). Add a shop there first.
 - A shop's catalog rows live in `src/data` (`kmart.ts` for Kmart); slugs other than IKEA's start with the brand (`kmart-8-cube-storage-unit`) and never change once shipped.
 - A family recipe for a shop other than IKEA is keyed `"<BRAND>:<LINE>"` (`"KMART:CUBE STORAGE"`) in `src/lib/plan/families/<brand>-<line>.ts`; IKEA's stay keyed by the first word of the name. Use the manual's own part numbers as labels.
 - `npm run kmart:check` builds every Kmart guide and prints it step by step; `npm run ikea:check` does the same for IKEA's catalog.

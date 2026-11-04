@@ -172,7 +172,7 @@ function Scene({ style }: { style: "paper" | "dowel" }) {
   const w = paper ? 1.2 : 2.4;
   const face = (shade: "top" | "left" | "right", tint?: boolean) => {
     if (paper) return "#fbf8f0";
-    if (tint) return shade === "right" ? "#f6d2bb" : shade === "left" ? "#ffe4d1" : "#fff1e6";
+    if (tint) return shade === "right" ? "var(--tint-3)" : shade === "left" ? "var(--tint-2)" : "var(--tint-1)";
     return shade === "right" ? "#efede7" : "#fff";
   };
   return (
@@ -252,8 +252,8 @@ function Zoom() {
       <circle cx={cx} cy={cy} r={r} fill="#fff" />
       <g clipPath="url(#cmp-zoom-clip)" stroke="var(--ink)" strokeLinejoin="round">
         {/* the divider coming down, with the hole the dowel goes into */}
-        <rect x={cx - 130} y={cy - 140} width={260} height={under - (cy - 140)} fill="#ffe4d1" strokeWidth={0} />
-        <rect x={cx - 15} y={under - 44} width={30} height={44} fill="#f2c2a2" strokeWidth={1.4} strokeDasharray="4 3" />
+        <rect x={cx - 130} y={cy - 140} width={260} height={under - (cy - 140)} fill="var(--tint-2)" strokeWidth={0} />
+        <rect x={cx - 15} y={under - 44} width={30} height={44} fill="var(--tint-4)" strokeWidth={1.4} strokeDasharray="4 3" />
         <path d={`M${cx - 130} ${under} H${cx - 15} M${cx + 15} ${under} H${cx + 130}`} strokeWidth={2.6} fill="none" />
         {/* the board, cut through */}
         <rect x={cx - 130} y={face} width={260} height={90} fill="#fff" strokeWidth={0} />

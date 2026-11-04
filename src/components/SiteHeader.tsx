@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
+import ShopColours from "./ShopColours";
 import { IGithub } from "./art/Icons";
 import { getStars } from "@/lib/github";
 import { GITHUB_URL } from "@/lib/site";
@@ -8,6 +9,7 @@ import { GITHUB_URL } from "@/lib/site";
 export default function SiteHeader() {
   return (
     <header className="site-head">
+      <ShopColours />
       <div className="head-left">
         <Logo />
         <NavLinks />
