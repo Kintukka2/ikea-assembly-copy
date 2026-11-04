@@ -73,6 +73,8 @@ export interface BrandTheme {
   headInk2: string;
   headLine: string;
   headActive: string;
+  /** a keyline round the current page's mark, when its colour needs one to stand out on the band */
+  headActiveRing: string;
   headChip: string;
   headMark: string;
   headDowel: string;
@@ -118,6 +120,7 @@ export const BRANDS: Record<BrandId, Brand> = {
       headInk2: "rgba(255, 255, 255, 0.84)",
       headLine: "rgba(255, 255, 255, 0.4)",
       headActive: "#ffdb00",
+      headActiveRing: "transparent",
       headChip: "rgba(255, 255, 255, 0.2)",
       headMark: "#ffdb00",
       headDowel: "#0058a3",
@@ -136,7 +139,7 @@ export const BRANDS: Record<BrandId, Brand> = {
     manualUrl: (name, number) => `https://www.kmart.com.au/search/?searchTerm=${encodeURIComponent(number ?? name)}`,
     caps: false,
     examples: ["8 Cube Storage Unit", "Charlie 6 Drawer Chest", "42633297", "Ladder Shelf", "Kids Bookcase"],
-    // red and white, on neutral greys: the red is the logo's own, and its blue is left to IKEA's look
+    // red and white, on neutral greys: the red is the logo's own, its blue only marks the page you're on
     theme: {
       page: "#f4f4f4",
       sunk: "#ececec",
@@ -162,7 +165,9 @@ export const BRANDS: Record<BrandId, Brand> = {
       headInk: "#ffffff",
       headInk2: "#ffffff",
       headLine: "rgba(255, 255, 255, 0.45)",
-      headActive: "#ffffff",
+      // blue on white, as it sits in the logo: blue alone barely shows on the red
+      headActive: "#1c6aaf",
+      headActiveRing: "#ffffff",
       headChip: "rgba(255, 255, 255, 0.24)",
       headMark: "#ffffff",
       headDowel: "#dd182c",

@@ -32,6 +32,7 @@
   --head-ink-2: var(--ink-2);
   --head-line: var(--line-2);
   --head-active: var(--ink);
+  --head-active-ring: transparent;
   --head-chip: rgba(18, 18, 18, 0.07);
   --head-mark: var(--ink);
   --head-dowel: var(--accent);
