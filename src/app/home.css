@@ -101,6 +101,7 @@
 .nav-link.on::after {
   transform: scaleX(1);
   background: var(--head-active);
+  box-shadow: 0 0 0 1.5px var(--head-active-ring);
 }
 .nav-count {
   display: inline-grid;
