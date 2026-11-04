@@ -15,10 +15,13 @@ import type { CustomFix, CustomParams, CustomPart, CustomStep, PartMaterial, Par
  *   6 x 35 (a), 16 cam locks (b), 44 dowels 6 x 30 (c), 4 screws 4 x 35 (d), 16 back panel clips with their screws (m),
  *   8 long screws 4 x 55 (f), 16 screws 4 x 25 (g), 8 leg screws 6 x 55 with two washers each (h), 2 wall brackets with
  *   a 4 x 12 screw (i), 2 wall plugs with a 4 x 35 screw (j).
- *   Kmart's other manual for it (Standard, 43114627, 4 pages) is a different build: the same carcass, frame and legs,
- *   but all four dividers are dowelled in first, both sides go on in one step, and two pairs of back panels (8 and 13)
- *   are nailed on last with 16 nails (e) and 6 pins (k) instead of four panels slid into grooves and clipped. This recipe
- *   follows the Walnut manual only, so the row lists only 43683390.
+ * - Bookshelf Storage, Standard, 43114627 (the bookshelf's other, 4 page manual): the same carcass, frame and legs
+ *   (bookcaseCarcass() and legFrame() build both), but a different build. All four dividers are dowelled to the shelves
+ *   first and both sides go on in one step, then the top and the bottom; lying on its back it takes the leg frame,
+ *   brackets and legs, then on its front four back panels (8 at the top and the bottom, 13 between) are nailed over the
+ *   back edges and pinned along the joins, and standing it takes the wall brackets. Hardware: the Walnut list without
+ *   the clips (m), plus 20 nails (e) and 6 round-head pins (k). Its step 7 count box says 16 nails, but its drawing
+ *   places 20 and the hardware list has 20: the guide drives 20.
  * - 4 Drawer Chest, Walnut, 43683406: the four drawers are built first (sides 16 and 17 and the brace 10 screwed to the
  *   back 9, the bottom 11 slid in, the front 8 on cam bolts and cam locks). Lying on its left side (3), the top rail (6),
  *   three front rails and the back rail (all 7) stand on it on cam bolts and dowels and the right side (4) goes on top.
@@ -96,6 +99,7 @@ const CRANKED_HINGE: Def = { kind: "hinge", len: 52, dia: 35, name: "Cranked hin
 const HINGE_SCREW: Def = { kind: "screw", len: 14, dia: 4, name: "Hinge screw" };
 const SHELF_SUPPORT: Def = { kind: "pin", len: 16, dia: 5, name: "Shelf support" };
 const NAIL: Def = { kind: "nail", len: 16, dia: 2 };
+const PANEL_PIN: Def = { kind: "nail", len: 20, dia: 2, name: "Round-head pin" };
 const SHELF_BRACKET: Def = { kind: "angle", len: 30, dia: 16, name: "Shelf bracket" };
 const SHELF_BRACKET_SCREW: Def = { kind: "screw", len: 12, dia: 3.5, name: "Shelf bracket screw" };
 
@@ -340,39 +344,39 @@ const WALL_STEP = { tools: ["drill", "screwdriver", "pencil"], wall: true, warni
 
 /* ---------- the bookshelf ---------- */
 
-function bookshelf(s: ProductSpec): CustomParams {
+/**
+ * The bookshelf's carcass, the same in both its manuals: the top and the bottom over and under the sides, three
+ * shelves between the sides on cam bolts and dowels, and four dividers dowelled between them, a third of the way across
+ * and on alternate sides; then two wall brackets on the top. `zB` is the carcass's back edge, `zd` the dividers'.
+ */
+function bookcaseCarcass(p: Parts, s: ProductSpec, zB: number, zd: number) {
   const W = s.size.w * 10, H = s.size.h * 10, D = s.size.d * 10;
+  const zF = D / 2, zc = (zB + zF) / 2;
   const xo = W / 2 - T / 2, xi = W / 2 - T;
   const y0 = LEG + T, y1 = H - T; // the sides stand between the bottom and the top
   const rowH = (y1 - y0 - 3 * T) / 4;
   const rowY = (k: number) => y0 + k * (rowH + T); // the bottom of row k, counting from the bottom
   const shelfY = (k: number) => rowY(k + 1) - T / 2; // shelf k, from the bottom
-  const zk = -D / 2 + 8; // the back panels' outside face, in grooves near the back edge
-  const zd = zk + BK; // the dividers stop in front of them
   const dx = xi - T / 2 - (2 * xi - T) / 3; // dividers a third of the way across
   const dxOf = (k: number) => (k % 2 ? dx : -dx); // the bottom row's on the left, then right, left, right
   const side = (i: number) => (i ? "S4" : "S3");
-  const p = new Parts();
-  p.add("T1", "1", "Top", [W, T, D], [0, H - T / 2, 0]);
-  p.add("B2", "2", "Bottom", [W, T, D], [0, LEG + T / 2, 0]);
-  p.add("S3", "3", "Left side", [T, y1 - y0, D], [-xo, (y0 + y1) / 2, 0]);
-  p.add("S4", "4", "Right side", [T, y1 - y0, D], [xo, (y0 + y1) / 2, 0]);
-  const shelves = range(3).map((k) => p.add(`H${k}`, k === 1 ? "6" : "5", k === 1 ? "Middle shelf" : "Shelf", [2 * xi, T, D], [0, shelfY(k), 0]));
-  const zdc = (D / 2 + zd) / 2;
-  const divs = range(4).map((k) => p.add(`V${k}`, "7", "Divider", [T, rowH, D / 2 - zd], [dxOf(k), rowY(k) + rowH / 2, zdc]));
-  const backs = range(4).map((k) => p.add(`K${k}`, "8", "Back panel", [2 * xi + 16, rowH + 10, BK], [0, rowY(k) + rowH / 2, zk + BK / 2], { material: "fiber" }));
-  const f = legFrame(p, { W, D, zc: 0, bottom: "B2", N: { rail: "9", end: "10", bracket: "11", leg: "12" }, railScrews: 2, splay: 0 });
+  p.add("T1", "1", "Top", [W, T, zF - zB], [0, H - T / 2, zc]);
+  p.add("B2", "2", "Bottom", [W, T, zF - zB], [0, LEG + T / 2, zc]);
+  p.add("S3", "3", "Left side", [T, y1 - y0, zF - zB], [-xo, (y0 + y1) / 2, zc]);
+  p.add("S4", "4", "Right side", [T, y1 - y0, zF - zB], [xo, (y0 + y1) / 2, zc]);
+  const shelves = range(3).map((k) => p.add(`H${k}`, k === 1 ? "6" : "5", k === 1 ? "Middle shelf" : "Shelf", [2 * xi, T, zF - zB], [0, shelfY(k), zc]));
+  const divs = range(4).map((k) => p.add(`V${k}`, "7", "Divider", [T, rowH, zF - zd], [dxOf(k), rowY(k) + rowH / 2, (zF + zd) / 2]));
 
-  // two dowels at each end of a divider, into the shelf (or the top or bottom) above and below it
-  const zdd = [zd + 50, D / 2 - 50];
+  // two dowels at each end of a divider, into the shelf (or the top or bottom) below and above it
+  const zdd = [zd + 50, zF - 50];
   const below = (k: number) => (k === 0 ? "B2" : shelves[k - 1]);
   const above = (k: number) => (k === 3 ? "T1" : shelves[k]);
-  const divDowels = (k: number): CustomFix[] => [
+  const divDowels = (k: number): [CustomFix, CustomFix] => [
     fx(DOWEL, zdd.map((z): Vec3 => [dxOf(k), rowY(k), z]), [0, 1, 0], divs[k], below(k)),
     fx(DOWEL, zdd.map((z): Vec3 => [dxOf(k), rowY(k) + rowH, z]), [0, -1, 0], divs[k], above(k)),
   ];
   // each shelf end: two cam bolts and two dowels in the side, two cam locks in the shelf's underside
-  const zA = [-(D / 2 - 40), D / 2 - 40], zC = [-(D / 2 - 100), D / 2 - 100];
+  const zA = [zB + 40, zF - 40], zC = [zB + 100, zF - 100];
   const sideJoin = (i: number): CustomFix[] => {
     const sx = i ? 1 : -1;
     return [
@@ -381,21 +385,35 @@ function bookshelf(s: ProductSpec): CustomParams {
       ...shelves.map((h, k) => fx(CAM, zA.map((z): Vec3 => [sx * (xi - 25), shelfY(k) - T / 2, z]), [0, 1, 0], h)),
     ];
   };
-  const topFix: CustomFix[] = [
+  // the top: cam bolts in it, cam locks in the sides and dowels in their ends; the bottom: dowels and screws
+  const topSides: CustomFix[] = [
     ...SX.map((sx, i) => fx(CAM_BOLT, zA.map((z): Vec3 => [sx * xo, y1, z]), [0, 1, 0], "T1", side(i))),
     ...SX.map((sx, i) => fx(CAM, zA.map((z): Vec3 => [sx * xi, y1 - 25, z]), [sx, 0, 0], side(i))),
     ...SX.map((sx, i) => fx(DOWEL, zC.map((z): Vec3 => [sx * xo, y1, z]), [0, -1, 0], side(i), "T1")),
-    ...divDowels(3),
   ];
-  const bottomFix: CustomFix[] = [
-    ...SX.map((sx, i) => fx(DOWEL, zC.map((z): Vec3 => [sx * xo, y0, z]), [0, 1, 0], side(i), "B2")),
-    ...divDowels(0),
-    ...SX.map((sx, i) => fx(SCREW, zA.map((z): Vec3 => [sx * xo, LEG, z]), [0, 1, 0], "B2", side(i))),
-  ];
+  const bottomDowels = SX.map((sx, i) => fx(DOWEL, zC.map((z): Vec3 => [sx * xo, y0, z]), [0, 1, 0], side(i), "B2"));
+  const bottomScrews = SX.map((sx, i) => fx(SCREW, zA.map((z): Vec3 => [sx * xo, LEG, z]), [0, 1, 0], "B2", side(i)));
+  // two wall brackets screwed to the top at the back, then a plug and a screw each into the wall
+  const wallX = [-(W / 2 - 120), W / 2 - 120];
+  const wallBrackets = [fx(WALL_BRACKET, wallX.map((x): Vec3 => [x, H, -D / 2 + 26]), [0, -1, 0], "T1"), fx(WALL_BRACKET_SCREW, wallX.map((x): Vec3 => [x, H, -D / 2 + 49]), [0, -1, 0], "T1")];
+  const wallFix = [fx(WALL_PLUG, wallX.map((x): Vec3 => [x, H + 30, -D / 2 - 25]), [0, 0, -1]), fx(WALL_SCREW, wallX.map((x): Vec3 => [x, H + 30, -D / 2 + 1]), [0, 0, -1])];
+  return { W, H, D, zc, xo, xi, y0, y1, rowH, rowY, shelfY, side, shelves, divs, divDowels, sideJoin, topSides, bottomDowels, bottomScrews, wallBrackets, wallFix };
+}
+
+/** The Walnut manual (43683390): the back panels slide into grooves as the carcass goes together, and clips hold them. */
+function bookshelf(s: ProductSpec): CustomParams {
+  const D = s.size.d * 10;
+  const zk = -D / 2 + 8; // the back panels' outside face, in grooves near the back edge
+  const p = new Parts();
+  const c = bookcaseCarcass(p, s, -D / 2, zk + BK); // the dividers stop in front of the back panels
+  const { W, xi, rowH, rowY, side, shelves, divs, divDowels, sideJoin } = c;
+  const backs = range(4).map((k) => p.add(`K${k}`, "8", "Back panel", [2 * xi + 16, rowH + 10, BK], [0, rowY(k) + rowH / 2, zk + BK / 2], { material: "fiber" }));
+  const f = legFrame(p, { W, D, zc: 0, bottom: "B2", N: { rail: "9", end: "10", bracket: "11", leg: "12" }, railScrews: 2, splay: 0 });
+  const topFix: CustomFix[] = [...c.topSides, ...divDowels(3)];
+  const bottomFix: CustomFix[] = [...c.bottomDowels, ...divDowels(0), ...c.bottomScrews];
   // a clip at each corner of each back panel, screwed into the side behind it
   const clipY = range(4).flatMap((k) => [rowY(k) + 25, rowY(k) + rowH - 25]);
   const clips = backClips([side(0), side(1)], xi, clipY, -D / 2);
-  const wallX = [-(W / 2 - 120), W / 2 - 120];
 
   const lie = "-x" as const; // on its right side, as the manual lays it
   const steps: CustomStep[] = [
@@ -474,12 +492,91 @@ function bookshelf(s: ProductSpec): CustomParams {
     {
       title: "Fix it to the wall",
       detail: "Screw the two wall brackets (i) to the back of the top. Push it against the wall, mark through the brackets, drill, push in the plugs and screw the brackets to the wall (j). Check for pipes and cables first.",
-      fix: [
-        fx(WALL_BRACKET, wallX.map((x): Vec3 => [x, H, -D / 2 + 26]), [0, -1, 0], "T1"),
-        fx(WALL_BRACKET_SCREW, wallX.map((x): Vec3 => [x, H, -D / 2 + 49]), [0, -1, 0], "T1"),
-        fx(WALL_PLUG, wallX.map((x): Vec3 => [x, H + 30, -D / 2 - 25]), [0, 0, -1]),
-        fx(WALL_SCREW, wallX.map((x): Vec3 => [x, H + 30, -D / 2 + 1]), [0, 0, -1]),
-      ],
+      fix: [...c.wallBrackets, ...c.wallFix],
+      ...WALL_STEP,
+    },
+  ];
+  return { parts: p.list, steps };
+}
+
+/**
+ * The Standard manual (43114627), sold as the Thorne Bookshelf Storage: all four dividers are dowelled to the shelves
+ * first, both sides go on together, then the top and the bottom. With the legs on it is turned onto its front and four
+ * back panels (8 at the top and the bottom, 13 between them) are nailed over the back edges, with round-head pins
+ * along the joins into the shelves.
+ */
+function bookshelfStorage(s: ProductSpec): CustomParams {
+  const D = s.size.d * 10;
+  const zB = -D / 2 + BK; // the back panels are nailed on behind the carcass, so it is that much shallower
+  const p = new Parts();
+  const c = bookcaseCarcass(p, s, zB, zB); // and the dividers reach right to its back edge
+  const { W, H, xo, shelfY, shelves, divs, divDowels, sideJoin } = c;
+  // the back panels cover the whole back, from under the bottom to the top of the top, and meet over each shelf
+  const edges = [LEG, shelfY(0), shelfY(1), shelfY(2), H];
+  const mid = (k: number) => k === 1 || k === 2;
+  const backs = range(4).map((k) =>
+    p.add(`K${k}`, mid(k) ? "13" : "8", mid(k) ? "Middle back panel" : "Back panel", [W, edges[k + 1] - edges[k], BK], [0, (edges[k] + edges[k + 1]) / 2, -D / 2 + BK / 2], { material: "fiber" }),
+  );
+  const f = legFrame(p, { W, D: D - BK, zc: c.zc, bottom: "B2", N: { rail: "9", end: "10", bracket: "11", leg: "12" }, railScrews: 2, splay: 0 });
+  // twenty nails, as the manual draws them: four into the top, four into the bottom, and at each join one either side
+  // of it into each side; then two pins along each join, into the shelf behind it
+  const zn = -D / 2;
+  const nx = [-(W / 2 - 20), -W / 6, W / 6, W / 2 - 20];
+  const nails: CustomFix[] = [
+    fx(NAIL, nx.map((x): Vec3 => [x, H - T / 2, zn]), [0, 0, 1], backs[3]),
+    fx(NAIL, nx.map((x): Vec3 => [x, LEG + T / 2, zn]), [0, 0, 1], backs[0]),
+    ...range(3).flatMap((k) => [fx(NAIL, SX.map((sx): Vec3 => [sx * xo, shelfY(k) + 20, zn]), [0, 0, 1], backs[k + 1]), fx(NAIL, SX.map((sx): Vec3 => [sx * xo, shelfY(k) - 20, zn]), [0, 0, 1], backs[k])]),
+  ];
+  const pins = range(3).map((k) => fx(PANEL_PIN, [-160, 160].map((x): Vec3 => [x, shelfY(k), zn]), [0, 0, 1], backs[k]));
+
+  const lie = "+z" as const; // on its back
+  const steps: CustomStep[] = [
+    {
+      title: "Dowel the four dividers to the shelves",
+      detail: "Push twelve dowels (c) in and join the four dividers (7) to the shelves as the manual lays them out: divider, shelf (5), divider, middle shelf (6), divider, shelf (5), divider. In the finished bookshelf they sit right, left, right, left from the top.",
+      add: [divs[3], shelves[2], divs[2], shelves[1], divs[1], shelves[0], divs[0]],
+      fix: [...divDowels(1), ...divDowels(2), divDowels(3)[0], divDowels(0)[1]],
+      pose: lie,
+      warnings: ["floor"],
+    },
+    {
+      title: "Fix both sides on",
+      detail: "Lay the shelves on their back edges. Turn twelve cam bolts (a) and push twelve dowels (c) into the two sides (3, 4), press the sides onto the shelves' ends and lock the twelve cam locks (b), two at each end of each shelf.",
+      add: ["S3", "S4"],
+      fix: [...sideJoin(0), ...sideJoin(1)],
+      pose: lie,
+      tools: ["screwdriver"],
+    },
+    {
+      title: "Fix the top and the bottom on",
+      detail: "Turn four cam bolts (a) into the top (1) and push in twelve dowels (c): two into each end of both sides and two into the free end of the top and bottom dividers. Press the top on and lock the four cam locks (b) in the sides, then press the bottom (2) on and drive two screws (d) through it into each side.",
+      add: ["T1", "B2"],
+      fix: [...c.topSides, divDowels(3)[1], ...c.bottomDowels, divDowels(0)[0], ...c.bottomScrews],
+      from: { T1: [0, 400, 0], B2: [0, -400, 0] },
+      pose: lie,
+      tools: ["screwdriver"],
+    },
+    ...legSteps(f, { rail: "9", end: "10", bracket: "11", leg: "12", dowel: "c", screw: "f", bracketScrew: "g", legScrew: "h" }, lie, ""),
+    {
+      title: "Turn it over and nail on the back panels",
+      detail: "Turn it onto its front. Lay the back panels on, 8 at the top and the bottom and the two 13 between, so they meet over the shelves. Nail them on with twenty nails (e): four along the top, four along the bottom and one either side of each join at both sides. Then drive six round-head pins (k) along the joins into the shelves, two in each.",
+      add: backs,
+      fix: [...nails, ...pins],
+      from: offset(backs, [0, 0, -400]),
+      pose: "-z",
+      tools: ["hammer"],
+    },
+    {
+      title: "Stand it up and screw on the wall brackets",
+      detail: "Screw the two wall brackets (i) to the top at the back, one small screw each.",
+      fix: c.wallBrackets,
+      pose: "+y",
+      tools: ["screwdriver"],
+    },
+    {
+      title: "Fix it to the wall",
+      detail: "Push it against the wall, mark through the brackets, drill, push in the plugs and screw the brackets to the wall (j). Check for pipes and cables first.",
+      fix: c.wallFix,
       ...WALL_STEP,
     },
   ];
@@ -951,6 +1048,8 @@ function recipe(s: ProductSpec): CustomParams | null {
   switch (s.slug) {
     case "kmart-thorne-bookshelf":
       return bookshelf(s);
+    case "kmart-thorne-bookshelf-storage":
+      return bookshelfStorage(s);
     case "kmart-thorne-4-drawer-chest":
       return chest(s);
     case "kmart-thorne-buffet-unit":

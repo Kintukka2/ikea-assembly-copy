@@ -10,9 +10,9 @@ Dowel is a multi-brand fork of [Bygga](https://github.com/Nutlope/bygga) (MIT), 
 
 | | IKEA | Kmart |
 | --- | --- | --- |
-| Products / guides | 1,223 / 2,225 | 81 / 81 |
+| Products / guides | 1,223 / 2,225 | 82 / 82 |
 | Find it by | name (KALLAX), article number (802.758.87), ikea.com link | name (8 Cube Storage Unit), keycode (42633297), kmart.com.au link |
-| Guides that follow the shop's own manual | 2,139 (from Bygga) | all 81, written from Kmart's PDFs: cube units, shelving, Willow, Charlie, Camille, Claire, Isla, Oliver, Thorne, Adrian, Tide, Miles, Stevie, Wharf, Nate, Ryan, Jude, Linen Look, chairs, kids storage, trolley and more |
+| Guides that follow the shop's own manual | 2,139 (from Bygga) | all 82, written from Kmart's PDFs: cube units, shelving, Willow, Charlie, Camille, Claire, Isla, Oliver, Thorne, Adrian, Tide, Miles, Stevie, Wharf, Nate, Ryan, Jude, Linen Look, chairs, kids storage, trolley and more |
 | Voice | 1,497 clips (Together) | every Kmart line, plus the top IKEA guides' missing lines, recorded locally with the same Kokoro voice |
 
 - **One search for every shop.** "All shops / IKEA / Kmart" switch, brand tags on every result, and brand words in the query work too: `kmart bookcase`, `IKEA KALLAX`, `my billy` and `the kallax` all land right (Bygga's search read "IKEA" or "my" as the product name).
@@ -86,6 +86,7 @@ Every one of these follows its own Kmart manual: the same steps in the same orde
 | Isla Desk | 14 | two drawers in a metal frame |
 | Isla 2 Drawer Bedside Table | 10 | on a metal stand |
 | Thorne Bookshelf | 13 | staggered cubbies, backs in grooves held by clips |
+| Thorne Bookshelf Storage | 9 | the same cubbies, backs nailed on last |
 | Thorne Coffee Table | 5 | leaning legs, a shelf below |
 | Thorne Buffet Unit | 12 | two doors beside three drawers |
 | Thorne 4 Drawer Chest | 12 | leaning legs, drawers built in two passes |
