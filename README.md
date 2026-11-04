@@ -10,9 +10,9 @@ Dowel is a multi-brand fork of [Bygga](https://github.com/Nutlope/bygga) (MIT), 
 
 | | IKEA | Kmart |
 | --- | --- | --- |
-| Products / guides | 1,223 / 2,225 | 40 / 40 |
+| Products / guides | 1,223 / 2,225 | 81 / 81 |
 | Find it by | name (KALLAX), article number (802.758.87), ikea.com link | name (8 Cube Storage Unit), keycode (42633297), kmart.com.au link |
-| Guides that follow the shop's own manual | 2,139 (from Bygga) | all 40, written from Kmart's PDFs: cube units, shelving, Willow, Charlie, Claire, Miles, Stevie, Linear, Luna, Nate, Ryan, Linen Look, kids storage, trolley and more |
+| Guides that follow the shop's own manual | 2,139 (from Bygga) | all 81, written from Kmart's PDFs: cube units, shelving, Willow, Charlie, Camille, Claire, Isla, Oliver, Thorne, Adrian, Tide, Miles, Stevie, Wharf, Nate, Ryan, Jude, Linen Look, chairs, kids storage, trolley and more |
 | Voice | 1,497 clips (Together) | every Kmart line, plus the top IKEA guides' missing lines, recorded locally with the same Kokoro voice |
 
 - **One search for every shop.** "All shops / IKEA / Kmart" switch, brand tags on every result, and brand words in the query work too: `kmart bookcase`, `IKEA KALLAX`, `my billy` and `the kallax` all land right (Bygga's search read "IKEA" or "my" as the product name).
@@ -72,6 +72,47 @@ Every one of these follows its own Kmart manual: the same steps in the same orde
 | 4 Tier Bookshelf | 9 | two halves joined, then the wall fixing |
 | 3 Cube Storage Unit with Cubby | 13 | slanted cubby fronts |
 | Blake 3 Tier Long Bookshelf | 8 | metal end frames, boards bolted between |
+| Camille Storage Unit with Adjustable Shelves | 16 | a cupboard with a shelf hutch on top |
+| Camille 4 Door Sideboard | 11 | four doors on cranked hinges, two-person carcass step |
+| Camille Sideboard | 13 | the same size built another way: long screws, a felt pad under the middle foot |
+| Camille Cabinet with Shelves | 11 | open shelves beside a door |
+| Oliver Bedside Table | 9 | a drawer over a shelf, post legs |
+| Oliver Bookshelf | 8 | three shelves between post-legged sides |
+| Oliver 3 Drawer Chest | 15 | post legs, deep-edged top |
+| Oliver 2 Door Cabinet with Drawer | 14 | a drawer over two doors |
+| Isla 3 Drawer Chest | 12 | on a metal stand |
+| Isla Buffet Unit with Adjustable Shelf | 9 | two doors on a metal stand |
+| Isla Bookcase Storage | 12 | metal frame, open shelves over a cupboard |
+| Isla Desk | 14 | two drawers in a metal frame |
+| Isla 2 Drawer Bedside Table | 10 | on a metal stand |
+| Thorne Bookshelf | 13 | staggered cubbies, backs in grooves held by clips |
+| Thorne Coffee Table | 5 | leaning legs, a shelf below |
+| Thorne Buffet Unit | 12 | two doors beside three drawers |
+| Thorne 4 Drawer Chest | 12 | leaning legs, drawers built in two passes |
+| Adrian Cabinet | 13 | two doors on round legs |
+| Adrian Bedside Table | 13 | two drawers on round legs |
+| Adrian Chest of Drawers | 14 | three drawers on round legs |
+| Tide 2 Door Cabinet | 15 | timber posts, two doors |
+| Tide 2 Drawer Hall Table | 16 | timber posts, two drawers, a shelf below |
+| Stevie Entertainment Unit | 11 | two doors on a metal frame |
+| Stevie Bedside Table | 14 | two drawers on a metal frame |
+| Wharf 6 Drawer Chest | 17 | two columns of drawers on a metal base |
+| Wharf 4 Door Sideboard | 13 | the top on two steel loops over the cabinet |
+| Miles 3 Drawer Chest | 15 | rounded sides |
+| Leon Bedside Table | 17 | a drawer that slides on the shelf, round legs |
+| Hazel Entertainment Unit | 13 | wavy end panels, three doors |
+| Sadie 6 Drawer Chest | 21 | drawers built three at a time on a frame base |
+| Jude Hall Table | 6 | cross-shaped legs |
+| Set of 2 Jude Coffee Tables | 4 | both tables built side by side |
+| Wave Book Storage | 32 | wavy book slots over two drawers on castors |
+| 2 Tier Panelled Shoe Cabinet | 9 | tilting trays on flip fittings |
+| Marble Base Coat Stand | 4 | two poles with hooks on a marble base |
+| Asker Dining Chair | 5 | shell seat bolted onto two side frames |
+| Asker Bar Stool | 6 | the same with a footrest |
+| Asker Chenille Lounge Chair | 5 | the dining chair's build, a wider seat |
+| Timber Boucle Chair | 8 | timber frame on barrel nuts |
+| Logan Lounge Chair | 2 | leg frame bolted under, back slid into the arms |
+| Jumi Lounge Chair | 6 | built upside down on its leg frames |
 
 Kmart's manuals sometimes disagree with themselves: a step's count box against its own drawing or the parts list (the 6 tub unit's step 5, the Stevie cam locks, the Miles clip screws). Each recipe picks the reading the drawings and totals support and says why in its comments. A Kmart product is listed only once a recipe follows its manual: the kind builders make parts and fittings up from the size, so `npm run kmart:check` fails on any Kmart product they would draw.
 
