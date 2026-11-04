@@ -2,7 +2,7 @@ import * as THREE from "three";
 import type { HwItem, PartItem, PartState, PartType, Plan, Step, Vec3 } from "@/lib/types";
 import { POSE_EULER } from "@/lib/plan/math";
 import { Drawable, hwDrawable, partDrawable, wallDrawable } from "./drawable";
-import { INK, INK_OLD } from "./materials";
+import { INK, INK_OLD, TINT_NEW } from "./materials";
 
 /** Part names can come from a shared scan link: never let them through as markup. */
 const esc = (t: string) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -142,6 +142,7 @@ export class Stage {
   disposed = false;
   visible = true;
   introDone = false;
+  private tint = TINT_NEW.clone();
   private io?: IntersectionObserver;
   private ro?: ResizeObserver;
   private pointers = new Map<number, { x: number; y: number }>();
@@ -161,6 +162,10 @@ export class Stage {
   constructor(el: HTMLElement, opts: StageOptions = {}) {
     this.el = el;
     this.opts = opts;
+    // the page's colour for the part being added (--tint-2), so a picked shop's site pages draw it in theirs;
+    // thumbnails are cached across pages, so they keep the default
+    const tint = opts.offscreen ? "" : getComputedStyle(el).getPropertyValue("--tint-2").trim();
+    if (/^#[0-9a-f]{6}$/i.test(tint)) this.tint.set(tint);
     // a handle for checking motion by hand in development
     if (process.env.NODE_ENV === "development" && !opts.offscreen) (window as unknown as { __stage?: Stage }).__stage = this;
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: !!opts.offscreen });
@@ -711,6 +716,7 @@ export class Stage {
     d.opacity = o.opacity;
     for (const f of d.faces) {
       f.uniforms.uOpacity.value = o.opacity;
+      f.uniforms.uTint.value.copy(this.tint);
       f.uniforms.uTintAmt.value = o.tint;
       f.depthWrite = o.opacity > 0.05;
     }

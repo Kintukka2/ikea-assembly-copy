@@ -21,6 +21,11 @@
   --on-pill: #fff;
   /* the hero headline */
   --title: var(--ink);
+  /* the part being added in a drawing, lightest face to the hole it goes in (the 3D stage reads --tint-2) */
+  --tint-1: #fff1e6;
+  --tint-2: #ffe6d3;
+  --tint-3: #f6d2bb;
+  --tint-4: #f2c2a2;
   /* the header and what sits on it */
   --head-bg: color-mix(in srgb, var(--page) 88%, transparent);
   --head-ink: var(--ink);

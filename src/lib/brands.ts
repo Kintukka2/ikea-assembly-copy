@@ -62,6 +62,11 @@ export interface BrandTheme {
   onPill: string;
   /** the hero headline */
   title: string;
+  /** the part being added in a drawing, lightest face to the hole it goes in: Dowel's are peach */
+  tint1: string;
+  tint2: string;
+  tint3: string;
+  tint4: string;
   /** the header band and what sits on it */
   headBg: string;
   headInk: string;
@@ -104,6 +109,10 @@ export const BRANDS: Record<BrandId, Brand> = {
       pill: "#ffdb00",
       onPill: "#0058a3",
       title: "#0058a3",
+      tint1: "#fffbe3",
+      tint2: "#fff3bd",
+      tint3: "#f4e4a0",
+      tint4: "#ecd67e",
       headBg: "#0058a3",
       headInk: "#ffffff",
       headInk2: "rgba(255, 255, 255, 0.84)",
@@ -127,7 +136,7 @@ export const BRANDS: Record<BrandId, Brand> = {
     manualUrl: (name, number) => `https://www.kmart.com.au/search/?searchTerm=${encodeURIComponent(number ?? name)}`,
     caps: false,
     examples: ["8 Cube Storage Unit", "Charlie 6 Drawer Chest", "42633297", "Ladder Shelf", "Kids Bookcase"],
-    // red and white, on neutral greys
+    // red and white, on neutral greys: the red is the logo's own, and its blue is left to IKEA's look
     theme: {
       page: "#f4f4f4",
       sunk: "#ececec",
@@ -136,23 +145,27 @@ export const BRANDS: Record<BrandId, Brand> = {
       ink: "#141414",
       ink2: "#4a4a4a",
       ink3: "#696969",
-      accent: "#e4002b",
-      accentSoft: "#ffdde3",
+      accent: "#dd182c",
+      accentSoft: "#ffdfe2",
       onAccent: "#ffffff",
-      primary: "#e4002b",
-      primaryHover: "#c20025",
+      primary: "#dd182c",
+      primaryHover: "#bb1425",
       onPrimary: "#ffffff",
-      pill: "#e4002b",
+      pill: "#dd182c",
       onPill: "#ffffff",
-      title: "#e4002b",
-      headBg: "#e4002b",
+      title: "#dd182c",
+      tint1: "#fff1f2",
+      tint2: "#ffe0e3",
+      tint3: "#f6cdd1",
+      tint4: "#efb6bc",
+      headBg: "#dd182c",
       headInk: "#ffffff",
       headInk2: "#ffffff",
       headLine: "rgba(255, 255, 255, 0.45)",
       headActive: "#ffffff",
       headChip: "rgba(255, 255, 255, 0.24)",
       headMark: "#ffffff",
-      headDowel: "#e4002b",
+      headDowel: "#dd182c",
     },
   },
 };
